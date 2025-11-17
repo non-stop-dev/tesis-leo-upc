@@ -1,0 +1,31 @@
+% LaTeX packages for academic paper
+% Core packages
+\usepackage{amsmath}         % Advanced math
+\usepackage{amssymb}         % Math symbols
+\usepackage{graphicx}        % Graphics support
+\usepackage{hyperref}        % Hyperlinks
+\usepackage{caption}         % Caption customization
+
+% Float control
+\usepackage{float}           % Provides [H] placement option for exact positioning
+
+% Table packages
+\usepackage{booktabs}        % Professional table formatting
+\usepackage{longtable}       % Multi-page tables
+\usepackage{threeparttable}  % Tables with notes
+\usepackage{threeparttablex} % Longtable compatibility for threeparttable
+\usepackage{array}           % Enhanced table formatting
+\usepackage{multirow}        % Multi-row cells
+\usepackage{makecell}        % Enhanced cell formatting
+
+% Additional packages
+\usepackage{siunitx}         % SI units formatting
+
+% Graphics path
+\graphicspath{{media/}}
+
+% Spanish captions (requires babel with spanish loaded)
+\addto\captionsspanish{%
+  \renewcommand{\listtablename}{Índice de tablas}%
+  \renewcommand{\tablename}{Tabla}%
+}

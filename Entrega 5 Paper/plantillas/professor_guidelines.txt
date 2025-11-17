@@ -1,0 +1,21 @@
+Total de hojas (entre 15 y 20 hojas)
+
+Intro (5 hojas)
+Motivo de investigación 
+Autores que validan el estudio (como estudios previos)
+
+Aproximación metodológica (7 hojas)
+- Justificación de variables y estimadores usados
+- Problemas encontrados, cómo fueron resueltos (Por ejemplo, variables que finalmente se sacaron de la investigación o se transformaron y por qué)
+- Fuente, # de observaciones
+- Paquete econométrico (Programa usado)
+- Análisis de tablas (Resumir las tablas, no pegar tablas de 1 página y media)
+
+
+Conclusiones del análisis econométrico y limitaciones (3 hojas)
+- Conclusiones
+- Limitaciones
+- Recomendaciones de política económica
+
+
+Bibliografía (Puede ser copia y pega de la tesis)

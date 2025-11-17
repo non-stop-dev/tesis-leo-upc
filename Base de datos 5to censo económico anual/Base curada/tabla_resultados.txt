@@ -1,0 +1,67 @@
+Regresión Logística: Supervivencia MYPEs 2021		
+		(1)
+VARIABLES	LABELS	Odds Ratio
+		
+op2021_original	Operación del establecimiento en 2021	.
+		(.)
+		. - .
+productividad_k	productividad_k	1.003***
+		(0.000)
+		1.003 - 1.003
+tributos_k	tributos_k	1.000**
+		(0.000)
+		1.000 - 1.000
+salarios_k	salarios_k	1.000*
+		(0.000)
+		1.000 - 1.000
+digital_score	Puntaje de digitalización (0 a 3)	0.976***
+		(0.001)
+		0.974 - 0.977
+ventas_std	Ventas 2021 estandarizadas (media=0, sd=1)	1.011***
+		(0.001)
+		1.009 - 1.012
+sexo_gerente	Género del gerente del local	1.009***
+		(0.001)
+		1.007 - 1.011
+1.region	Región geográfica del Perú = 1, Sierra	0.940***
+		(0.001)
+		0.938 - 0.942
+2.region	Región geográfica del Perú = 2, Selva	0.969***
+		(0.002)
+		0.966 - 0.972
+1.sector	Sector Económico = 1, Productivo	0.987***
+		(0.002)
+		0.984 - 0.990
+2.sector	Sector Económico = 2, Servicios	0.989***
+		(0.001)
+		0.987 - 0.991
+1.regimen	Régimen Tributario = 1, Nuevo Régimen Único Simplificado (RUS)	1.045***
+		(0.001)
+		1.043 - 1.047
+2.regimen	Régimen Tributario = 2, Régimen Especial de Renta (RER)	1.035***
+		(0.002)
+		1.031 - 1.039
+3.regimen	Régimen Tributario = 3, Régimen MYPE Tributario (RMT)	1.139***
+		(0.002)
+		1.135 - 1.143
+4.regimen	Régimen Tributario = 4, Régimen General (RG)	1.270***
+		(0.002)
+		1.266 - 1.274
+1.tipo_local	Propiedad del local = 1, Alquilado	0.896***
+		(0.001)
+		0.894 - 0.897
+2.tipo_local	Propiedad del local = 2, Otro	0.902***
+		(0.003)
+		0.897 - 0.907
+Constant	Constant	1.684***
+		(0.002)
+		1.681 - 1.687
+		
+Observations		1,327,956
+R-squared		0.058
+Errores Estándar		Robustos (Cluster CIUU 4 dígitos
+,		,
+)		N
+e(N		)
+seEform in parentheses		
+*** p<0.01, ** p<0.05, * p<0.1		
