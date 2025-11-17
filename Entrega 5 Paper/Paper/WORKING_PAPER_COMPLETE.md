@@ -83,11 +83,11 @@ Lima, noviembre de 2025
 
 # 1. INTRODUCCIÓN
 
-La supervivencia empresarial en economías emergentes representa un desafío fundamental para el desarrollo económico sostenible, particularmente en contextos caracterizados por altos niveles de informalidad y vulnerabilidad ante choques macroeconómicos. Las micro y pequeñas empresas (MYPEs) constituyen la columna vertebral de la economía peruana, representando más del 95% de las unidades empresariales y concentrando el 73.1% del empleo nacional (MTPE, 2024). Sin embargo, su sostenibilidad enfrenta desafíos estructurales críticos: el 75% opera en la informalidad (Gestión, 2024), apenas el 6.68% de las empresas formales accede a financiamiento formal (Aliaga, 2017), y los procesos de formalización requieren 8 procedimientos que toman 26 días en promedio, comparado con 4.9 procedimientos y 9.2 días en países OCDE (Banco Mundial, 2020).
+El desarrollo económico sostenible en economías emergentes enfrenta obstáculos estructurales significativos, especialmente cuando predominan altos niveles de informalidad empresarial y fragilidad ante perturbaciones macroeconómicas. En el Perú, las micro y pequeñas empresas (MYPEs) conforman el núcleo del aparato productivo nacional, concentrando el 73.1% del empleo y representando más del 95% del total de unidades empresariales (Ministerio de Trabajo y Promoción del Empleo [MTPE], 2024). No obstante, estas empresas operan bajo severas restricciones estructurales: aproximadamente el 75% permanece en la informalidad (Torres, 2025), el acceso a financiamiento formal alcanza únicamente al 6.68% de las empresas registradas (Aliaga, 2017), y completar los trámites de formalización demanda 8 procedimientos durante 26 días promedio, cifra significativamente superior a los 4.9 procedimientos y 9.2 días observados en economías OCDE (Banco Mundial, 2020).
 
-La fragilidad del tejido empresarial peruano quedó dramáticamente expuesta durante la pandemia de COVID-19. Varona & Gonzales (2021) documentaron elasticidades de corto y largo plazo de -0.15 y -0.24 respectivamente en la actividad económica de las MYPEs, evidenciando que las empresas informales fueron particularmente vulnerables a choques externos. Las dinámicas recientes confirman esta precariedad: en el último trimestre de 2024, la tasa de mortalidad empresarial alcanzó 8.28% frente a una tasa de natalidad de apenas 2.20%, resultando en una pérdida neta de 215,142 empresas (INEI, 2025).
+La pandemia de COVID-19 reveló con particular intensidad la vulnerabilidad del ecosistema empresarial peruano. El estudio de Varona & Gonzales (2021) identificó elasticidades de -0.15 en el corto plazo y -0.24 en el largo plazo respecto a la actividad económica de las MYPEs, confirmando que las unidades informales experimentaron mayor exposición a perturbaciones externas. Esta fragilidad persiste en el período reciente: durante el cuarto trimestre de 2024, la demografía empresarial registró una tasa de mortalidad del 8.28% frente a una tasa de natalidad de apenas 2.20%, traducido en una contracción neta de 215,142 empresas (Instituto Nacional de Estadística e Informática [INEI], 2025).
 
-En este contexto, la formalización empresarial, operacionalizada mediante la tenencia del Registro Único de Contribuyentes (RUC), emerge como una intervención potencialmente crucial para fortalecer la supervivencia empresarial. Esta investigación se alinea directamente con el Objetivo de Desarrollo Sostenible 8 sobre trabajo decente y crecimiento económico, al analizar cómo la formalización puede contribuir a la sostenibilidad del tejido empresarial peruano en un contexto post-pandemia.
+Frente a este panorama, la formalización mediante el Registro Único de Contribuyentes (RUC) constituye una política potencialmente determinante para mejorar la sostenibilidad empresarial. El presente estudio examina cómo la obtención del RUC influye en la probabilidad de supervivencia de las MYPEs peruanas en el contexto post-pandemia, contribuyendo directamente al Objetivo de Desarrollo Sostenible 8 sobre promoción del trabajo decente y crecimiento económico inclusivo.
 
 El marco teórico de esta investigación se fundamenta en el modelo seminal de selección y evolución industrial desarrollado por Jovanovic (1982). Este modelo establece que las empresas ingresan al mercado con información imperfecta sobre su eficiencia operativa intrínseca ($\theta$), descubriendo gradualmente esta característica a través de su desempeño. La probabilidad de supervivencia en el período $t$ se define como $P(\text{Sobrevivir}_t) = F(\theta, x_t)$, donde $\theta$ representa la eficiencia intrínseca y $x_t$ el vector de características empresariales observables.
 
@@ -97,9 +97,9 @@ La evidencia empírica para el Perú respalda estos mecanismos. Chacaltana (2016
 
 La literatura internacional documenta que los efectos de la formalización sobre la supervivencia empresarial varían sistemáticamente según el contexto geográfico e institucional. Liedholm (2002) encontró que las empresas urbanas tienen 25% mayor probabilidad de supervivencia comparadas con las rurales, diferencia atribuida a mejor acceso a mercados e infraestructura institucional. Tonetto et al. (2024) reportaron tasas de supervivencia más altas en regiones brasileras con economías basadas en productos primarios (68-69%) versus áreas metropolitanas (62%), atribuido a menores niveles de competencia. Carrión-Cauja (2021) documentó en Ecuador que los impuestos afectan negativamente la supervivencia de empresas pequeñas y medianas pero no grandes, sugiriendo capacidad diferencial de absorción de costos regulatorios.
 
-Estos hallazgos cobran particular relevancia para el Perú, donde las disparidades geográficas son marcadas. La Costa concentra 59.67% de las MYPEs censales, mayor densidad poblacional, superior conectividad digital (59% de penetración de internet en Lima vs. 9% en áreas rurales según INEI, 2021) y mejor acceso a servicios financieros formales. En contraste, la Sierra (32.47% de MYPEs) y Selva (7.87%) enfrentan barreras logísticas sustanciales, menor desarrollo institucional y limitada infraestructura digital, factores que podrían modular significativamente los beneficios de la formalización.
+Estos hallazgos cobran particular relevancia para el Perú, donde las disparidades geográficas son marcadas. La Costa concentra 59.67% de las MYPEs censales, mayor densidad poblacional, superior conectividad digital (59% de penetración de internet en Lima vs. 9% en áreas rurales según Instituto Nacional de Estadística e Informática [INEI], 2020) y mejor acceso a servicios financieros formales. En contraste, la Sierra (32.47% de MYPEs) y Selva (7.87%) enfrentan barreras logísticas sustanciales, menor desarrollo institucional y limitada infraestructura digital, factores que podrían modular significativamente los beneficios de la formalización.
 
-La pandemia de COVID-19 aceleró la adopción de tecnologías digitales, transformándola en un factor potencialmente crítico para la supervivencia empresarial. Solomon et al. (2024) demostraron que el conocimiento de redes sociales incrementa la probabilidad de adopción tecnológica (odds ratio: 2.89, p<0.01). Para el Perú, León & Valcárcel (2022) documentaron que la intensidad en el uso de internet incrementa el logaritmo de las ganancias empresariales en 0.231 unidades (p<0.01).
+El contexto de la pandemia de COVID-19 catalizó un proceso de digitalización empresarial, consolidando las tecnologías digitales como determinantes clave de la viabilidad empresarial. La investigación de Solomon et al. (2024) evidencia que la familiaridad con plataformas de redes sociales eleva significativamente la propensión a adoptar innovaciones tecnológicas (odds ratio: 2.89, p<0.01). En el caso peruano, León Mendoza y Valcárcel Pineda (2022) establecieron que el uso intensivo de internet se asocia con un incremento de 0.231 unidades logarítmicas en las utilidades empresariales (p<0.01).
 
 Esta investigación contribuye a la literatura sobre supervivencia empresarial en tres dimensiones principales. Primero, emplea datos censales del V Censo Nacional Económico 2022 (INEI) que incluyen 1,377,931 MYPEs (96.6% microempresas, 3.4% pequeñas empresas), distribuidas en 59.67% Costa, 32.47% Sierra y 7.87% Selva. Esta cobertura exhaustiva permite estimaciones robustas de efectos heterogéneos a nivel regional, superando las limitaciones de estudios basados en muestras reducidas que no pueden desagregar sistemáticamente por ubicación geográfica.
 
@@ -107,73 +107,63 @@ Segundo, el análisis se centra explícitamente en la heterogeneidad regional de
 
 Tercero, se incorpora el análisis de regímenes tributarios (RUS, RER, RG, RMT) como variable de control, permitiendo capturar efectos diferenciales de la carga tributaria según el tipo de formalización. Adicionalmente, se controla por adopción de instrumentos digitales mediante un Digital Score ordinal (0-3), productividad laboral y sector económico. El contexto temporal es relevante: los datos corresponden al ejercicio fiscal 2021, primer año completo de recuperación post-COVID-19.
 
-La pregunta central que guía esta investigación es: ¿Cómo influye la formalización en la probabilidad de supervivencia de las MYPEs en el Perú, y cómo varían estos efectos según la región geográfica? Los objetivos específicos son: (1) evaluar el efecto de la formalización (RUC) en la probabilidad de supervivencia de las MYPEs, controlando por características empresariales relevantes; y (2) determinar la variación en los efectos de la formalización según región geográfica (Costa, Sierra, Selva).
+Este estudio aborda la siguiente interrogante central: ¿De qué manera la formalización empresarial incide en la probabilidad de supervivencia de las MYPEs peruanas, y cómo se diferencia este impacto entre regiones geográficas? Para responder esta pregunta, se establecen dos objetivos específicos: (1) cuantificar el efecto de poseer RUC sobre la probabilidad de supervivencia empresarial de las MYPEs, manteniendo constantes otras características relevantes de las firmas; y (2) identificar la heterogeneidad en los efectos de la formalización según la ubicación geográfica (Costa, Sierra, Selva).
 
-La hipótesis central plantea que las MYPEs formales (con RUC) presentan mayor probabilidad de supervivencia comparadas con sus contrapartes informales, ceteris paribus. Este efecto positivo se fundamenta en los mecanismos teóricos de Jovanovic (1982) y la evidencia empírica de Chacaltana (2016) y Yamada (2009). Adicionalmente, se hipotetiza que el efecto positivo de la formalización es más pronunciado en la Costa comparado con Sierra y Selva, debido a mejor infraestructura institucional, mayor acceso a mercados formales y superior conectividad digital.
+La hipótesis principal postula que las MYPEs con RUC exhiben una probabilidad de supervivencia superior frente a empresas informales, manteniendo constantes otros factores. Este planteamiento se sustenta en los fundamentos teóricos propuestos por Jovanovic (1982) y en los hallazgos empíricos reportados por Chacaltana (2016) y Yamada (2009). Como hipótesis secundaria, se propone que el impacto favorable de la formalización se intensifica en la región Costa en comparación con Sierra y Selva, atribuible a ventajas comparativas en infraestructura institucional, facilidades de acceso a mercados regulados y mayor penetración de conectividad digital.
 
-Los hallazgos generarán evidencia empírica sobre el papel de la formalización en la supervivencia de MYPEs en contexto post-COVID-19, ofreciendo insumos para políticas públicas diferenciadas que fortalezcan la sostenibilidad empresarial y contribuyan al Objetivo de Desarrollo Sostenible 8 sobre trabajo decente y crecimiento económico.
-\clearpage
+Los resultados de este análisis aportarán evidencia cuantitativa sobre la incidencia de la formalización en la sostenibilidad de MYPEs durante la recuperación post-COVID-19, proporcionando fundamentos técnicos para el diseño de intervenciones públicas regionalmente diferenciadas orientadas a fortalecer el ecosistema empresarial peruano, en concordancia con el Objetivo de Desarrollo Sostenible 8 referido a la promoción del empleo decente y el crecimiento económico inclusivo.
 
 # 2. APROXIMACIÓN METODOLÓGICA
 
 ## 2.1 Fuente de Datos
 
-El análisis empírico utiliza datos transversales del V Censo Nacional Económico 2022, realizado por el Instituto Nacional de Estadística e Informática (INEI) entre abril y agosto de 2022. Este censo recopila información económica y financiera correspondiente al ejercicio fiscal 2021 de establecimientos productores de bienes y servicios en área urbana de los 24 departamentos y la Provincia Constitucional del Callao. La base de datos pública incluye más de 1.9 millones de observaciones, abarcando microempresas (≤150 UIT), pequeñas empresas (>150 y ≤1700 UIT), medianas y grandes empresas, clasificadas por ventas según la Ley 30056 (Congreso de la República del Perú, 2013).
-
-Para este estudio, se filtró la base original excluyendo establecimientos no particulares (centros comerciales, mercados), medianas y grandes empresas, y observaciones con datos inconsistentes. Además, se procedió con el cálculo de la variable productividad_x_trabajador siguiendo el concepto del INEI (2022): "La productividad del trabajo mide el aporte de cada trabajador en la generación de valor agregado y se calcula como el valor agregado anual promedio generado por cada trabajador (personal ocupado). Cuanto mayor sea este indicador, más deseable es el resultado". Tras la limpieza, la base final contiene 1,377,931 observaciones de MYPEs: 96.6% microempresas y 3.4% pequeñas empresas, distribuidas en 59.67% Costa, 32.47% Sierra y 7.87% Selva.
-
-El contexto estructural peruano presenta desafíos significativos para la supervivencia empresarial. Entre 2014 y 2021, las MYPEs formales crecieron 33.1% (1.59 a 2.12 millones), aunque con desaceleración de la tasa de variación anual (INEI, 2022). El empleo informal fluctuó entre 68-76.9% (2010-2023), evidenciando persistencia estructural de la informalidad.
+El análisis empírico utiliza datos transversales del V Censo Nacional Económico 2022, (Instituto Nacional de Estadística e Informática [INEI], 2022), correspondientes al ejercicio fiscal 2021. Tras filtrar la base original para excluir establecimientos no particulares, medianas y grandes empresas, y observaciones con datos inconsistentes, la muestra final contiene 1,377,931 MYPEs: 96.6% microempresas y 3.4% pequeñas empresas, distribuidas en 59.67% Costa, 32.47% Sierra y 7.87% Selva. La productividad laboral se calcula como valor agregado por trabajador ocupado, siguiendo la metodología estándar del INEI (2022). El análisis se implementa en Stata 17 (StataCorp, 2021).
 
 ## 2.2 Justificación de Variables
 
-Las variables seleccionadas para el modelo de regresión logística se vinculan directamente con el marco teórico de Jovanovic (1982), donde la variable dependiente es supervivencia empresarial, medida como variable binaria (0=no operativa, 1=operativa en 2021). La variable independiente principal es formalización, operacionalizada mediante tenencia de Registro Único de Contribuyentes (RUC), variable binaria donde 0 indica ausencia de RUC y 1 su posesión. Esta variable representa el mecanismo teórico central del estudio. La formalización reduce costos de transacción $c(\cdot)$ al eliminar sanciones por informalidad, facilitar acceso a financiamiento formal y permitir participación en mercados regulados. Simultáneamente, incrementa eficiencia $\theta$ al mejorar acceso a capacitación, tecnología y redes empresariales. Chacaltana (2016) demostró que el RUC genera brechas de productividad hasta ocho veces mayores comparadas con empresas informales. Yamada (2009) documentó hazard ratio de 0.85 (p<0.15), evidenciando 15% menor probabilidad de cierre para empresas formalizadas.
+La variable dependiente es supervivencia empresarial (0=no operativa, 1=operativa en 2021). La variable independiente principal es formalización mediante tenencia de RUC (0=sin RUC, 1=con RUC), representando el mecanismo teórico central que reduce costos de transacción $c(\cdot)$ e incrementa eficiencia operativa $\theta$ según Jovanovic (1982).
 
-Las variables de control se agrupan en tres dimensiones. Primero, características geográficas: región se mide como variable categórica (0=Costa, 1=Sierra, 2=Selva) que modula $c(q_t, x_t)$ mediante acceso a mercados e infraestructura institucional. Costa concentra 59.67% de MYPEs censales, mayor densidad poblacional, superior conectividad digital (59% penetración internet en Lima versus 9% rural, INEI 2021) y mejor acceso a servicios financieros. Sierra (32.47%) y Selva (7.87%) enfrentan barreras logísticas, menor desarrollo institucional y limitada infraestructura digital. Liedholm (2002) documentó 25% mayor supervivencia en áreas urbanas versus rurales. Los términos de interacción RUC×Región permiten testear si estos contextos institucionales heterogéneos modulan los beneficios de la formalización.
+Las variables de control capturan tres dimensiones críticas. Primero, características geográficas: región (0=Costa, 1=Sierra, 2=Selva) modula efectos de formalización mediante acceso diferencial a mercados e infraestructura institucional. Los términos de interacción RUC×Región testean la hipótesis de heterogeneidad espacial documentada, entre otros autores, por Liedholm (2002).
 
-Segundo, características económicas y productivas. Digital Score es variable ordinal (0=sin instrumentos digitales, 1=un instrumento, 2=dos instrumentos, 3=tres o más) que captura intensidad de adopción digital post-COVID mediante presencia web, Facebook y otras redes sociales. Aumenta producción $q_t$ al mejorar visibilidad y ventas, reduce costos $c(\cdot)$ mediante menores gastos de marketing, elevando eficiencia $\theta$. León & Valcárcel (2022) documentaron que intensidad de internet incrementa logaritmo de ganancias en 0.231 unidades (p<0.01). Solomon et al. (2024) reportaron odds ratios de 2.89 (conocimiento) y 3.78 (uso estratégico) en PYMEs africanas. Esta variable es metodológicamente necesaria como control en contexto post-COVID donde digitalización se transformó de ventaja competitiva opcional a factor crítico de supervivencia. Productividad laboral, medida como Valor Agregado por Empleados en soles, captura eficiencia en generación de valor por trabajador, incrementando $\theta$ directamente. Alvarez et al. (2020) demostraron que productividad laboral es predictor robusto de supervivencia en PYMEs latinoamericanas. Esta variable representa la eficiencia operativa intrínseca del modelo de Jovanovic, distinguiendo empresas con $\theta$ alto (sobreviven) de $\theta$ bajo (salen del mercado).
+Segundo, características económicas y productivas. Digital Score (0-3) captura intensidad de adopción digital post-COVID mediante presencia web, Facebook y redes sociales, variable crítica dado el contexto temporal de 2021 donde digitalización se transformó en factor de supervivencia. Productividad laboral (valor agregado por trabajador) representa la eficiencia operativa $\theta$ del modelo de Jovanovic, distinguiendo empresas viables de no viables. Ventas anuales refleja capacidad de generar beneficios $\pi_t$ y escala operativa; se escaló dividiéndola por 1,000 (expresada en miles de soles) para resolver problemas de convergencia numérica en algoritmos de optimización sin alterar propiedades estadísticas del modelo.
 
-Dentro de estas características económicas y productivas se incluyó ventas anuales, variable cuantitativa medida en soles para el año fiscal 2021, refleja capacidad de generar beneficios $\pi_t$ y escala operativa. Mayores ventas incrementan $\theta$ al mejorar flujos de caja para cumplir obligaciones, mantener inventarios y resistir choques externos. Se utiliza como variable continua para capturar variación gradual y calcular efectos marginales. Sin embargo, se escaló la variable dividiéndola por 1,000, expresándola en miles de soles. Esta transformación no altera significancia estadística ni ajuste del modelo, pero facilita la interpretación. El escalamiento lineal preserva propiedades estadísticas del modelo mientras mejora estabilidad numérica de algoritmos de optimización, puesto que con la variable en su estado original, las iteraciones de la regresión logística no llegaban a resultados estables, entrando en un "loop" infinito.
+Régimen tributario (RUS, RER, RG, RMT) captura intensidad regulatoria dentro de empresas formales, controlando efectos heterogéneos de carga administrativa según sofisticación del régimen. Variables demográficas y operacionales adicionales (sector, sexo del gerente, tributos, remuneraciones, tipo de local) se incluyeron como controles siguiendo literatura previa, aunque resultaron no significativas estadísticamente en el modelo final.
 
-Sector económico, variable categórica (0=Comercial, 1=Servicios, 2=Productivo), afecta competencia y estructura de costos. Sectores productivos muestran mayor resiliencia que comercio debido a barreras de entrada tecnológicas y márgenes operativos superiores. Tonetto et al. (2024) reportaron tasas de supervivencia heterogéneas por sector en Brasil (68-69% productos primarios versus 62% áreas metropolitanas), confirmando relevancia de este control para aislar el efecto de RUC de efectos sectoriales confundidores. Régimen tributario, variable categórica (0=RUS, 1=RER, 2=RG, 3=RMT), captura intensidad regulatoria dentro de empresas formales. Aunque los tributos pagados aumentan costos $c(q_t, x_t)$, señalan formalidad y acceso a beneficios fiscales, con efectos heterogéneos según régimen. Carrión-Cauja (2021) demostró mediante modelo cloglog en Ecuador que impuestos afectan negativamente supervivencia de empresas pequeñas y medianas pero no grandes, sugiriendo capacidad diferencial de absorción de costos regulatorios. Vargas Figueroa et al. (2023) documentaron efectos heterogéneos de regímenes tributarios peruanos sobre formalización. Remuneraciones, variable cuantitativa medida en soles para salarios y beneficios pagados en 2021, incrementa costos $c(q_t, x_t)$, pero salarios competitivos elevan $\theta$ al atraer trabajadores calificados y aumentar productividad laboral. Puebla et al. (2018) demostraron relación positiva entre remuneraciones y desempeño empresarial en MYPEs ecuatorianas.
-
-Tercero, características demográficas y operacionales. Sexo del gerente, variable binaria (0=Mujer, 1=Hombre), modula adopción de estrategias formales y digitales, afectando θ. García-Salirrosas et al. (2022) reportaron mayores tasas de formalización en hombres, en Lima. Barriga et al. (2022) encontraron que mujeres emprendedoras alcanzan mayor eficiencia técnica. Por ello, este control demográfico es necesario para aislar efectos de género. Tipo de local, variable categórica (0=Propio, 1=Alquilado, 2=Otro), reduce costos c(q_t, x_t) al estabilizar operaciones y mejorar percepción de clientes y acreedores. Yamada (2009) y Aliaga (2017) documentaron que tipo de local es predictor significativo de supervivencia en MYPEs peruanas, representando estabilidad operacional que reduce riesgo percibido por stakeholders. Respecto a la variable tamaño empresarial, fue excluida del modelo para evitar multicolinealidad con ventas, dado que esta última se usa para determinar la primera. Sin embargo, la muestra presenta 96.6% microempresas y 3.4% pequeñas empresas, desbalance controlado mediante errores estándar clusterizados por código CIIU de 4 dígitos.
-
-Variables adicionales en la base censal como recuperación de tributos y utilidad se omitieron por no ser teóricamente relevantes para el modelo de Jovanovic. Se descartaron variables de tasa de interés por dos razones: primero, no existen datos censales sobre acceso individual a préstamos; segundo, solo 6.68% de MYPEs accede a financiamiento formal (Aliaga, 2017), generando problemas de datos faltantes no aleatorios que sesgarían estimaciones. La Tabla 1 resume todas las variables utilizadas en el modelo.
-\begin{longtable}{p{3cm}p{5cm}p{2.5cm}p{4cm}}
+Tamaño empresarial se excluye del modelo porque en Perú se define por ventas anuales según Ley 30056 (Congreso de la República del Perú, 2013), generando colinealidad con la variable ventas incluida. La muestra presenta 96.6% microempresas y 3.4% pequeñas empresas, desbalance controlado mediante errores estándar clusterizados por código CIIU de 4 dígitos. Variables de tasa de interés se descartan por ausencia de datos censales sobre acceso individual a préstamos y problemas de datos faltantes no aleatorios (solo 6.68% de MYPEs accede a financiamiento formal según Aliaga, 2017). La Tabla 1 resume todas las variables utilizadas.
+\begin{longtable}{p{3.5cm}p{6cm}p{5cm}}
 \caption{Descripción de variables del modelo}
 \label{tab:variables-modelo}\\
 \toprule
-Variable & Definición & Tipo & Valores \\
+Variable & Definición & Codificación \\
 \midrule
 \endfirsthead
 
-\multicolumn{4}{c}{\textit{Tabla \thetable{} (continuación)}}\\
+\multicolumn{3}{c}{\textit{Tabla \thetable{} (continuación)}}\\
 \toprule
-Variable & Definición & Tipo & Valores \\
+Variable & Definición & Codificación \\
 \midrule
 \endhead
 
 \midrule
-\multicolumn{4}{r}{\textit{Continúa en la siguiente página}}\\
+\multicolumn{3}{r}{\textit{Continúa en la siguiente página}}\\
 \endfoot
 
 \bottomrule
-\multicolumn{4}{l}{\small\textit{Fuente: V Censo Nacional Económico 2022 (INEI), elaboración propia.}}\\
+\multicolumn{3}{l}{\small\textit{Fuente: V Censo Nacional Económico 2022 (INEI), elaboración propia.}}\\
 \endlastfoot
 
-Supervivencia & Operativa en 2021 & Binaria & 0=No operativa, 1=Operativa \\
-RUC & Tenencia de Registro Único de Contribuyentes & Binaria & 0=Sin RUC, 1=Con RUC \\
-Región & Ubicación geográfica del establecimiento & Categórica & 0=Costa, 1=Sierra, 2=Selva \\
-Sector & Sector económico principal & Categórica & 0=Comercial, 1=Servicios, 2=Productivo \\
-Tamaño & Tamaño según ventas netas en UIT & Binaria & 0=Microempresa (≤150 UIT), 1=Pequeña (>150 y ≤1700 UIT) \\
-Sexo Gerente & Género del gerente & Binaria & 0=Mujer, 1=Hombre \\
-Ventas Netas & Ingresos netos en soles en 2021 & Cuantitativa & Continua \\
-Productividad & Valor agregado por trabajador en soles & Cuantitativa & Continua \\
-Digital Score & Intensidad de digitalización & Ordinal & 0=Sin instrumentos, 1-3=Número de instrumentos \\
-Tributos & Tributos pagados en soles en 2021 & Cuantitativa & Continua \\
-Remuneraciones & Salarios y beneficios en soles en 2021 & Cuantitativa & Continua \\
-Tipo Local & Tenencia del local & Categórica & 0=Propio, 1=Alquilado, 2=Otro \\
-Régimen & Régimen Tributario & Categórica & 0=RUS, 1=RER, 2=RG, 3=RMT \\
+Supervivencia & Operativa en 2021 & Binaria: 0=No, 1=Sí \\
+RUC & Tenencia de Registro Único de Contribuyentes & Binaria: 0=Sin RUC, 1=Con RUC \\
+Región & Ubicación geográfica & 0=Costa, 1=Sierra, 2=Selva \\
+Sector & Sector económico & 0=Comercial, 1=Servicios, 2=Productivo \\
+Sexo Gerente & Género del gerente & Binaria: 0=Mujer, 1=Hombre \\
+Ventas Netas & Ingresos netos 2021 (miles de soles) & Continua \\
+Productividad & Valor agregado por trabajador (soles) & Continua \\
+Digital Score & Intensidad digitalización & Ordinal: 0-3 instrumentos digitales \\
+Tributos & Tributos pagados 2021 (soles) & Continua \\
+Remuneraciones & Salarios y beneficios 2021 (soles) & Continua \\
+Tipo Local & Tenencia del local & 0=Propio, 1=Alquilado, 2=Otro \\
+Régimen & Régimen Tributario & 0=RUS, 1=RER, 2=RG, 3=RMT \\
 \end{longtable}
 
 ## 2.3 Especificación del Modelo Econométrico
@@ -185,10 +175,10 @@ $$
 \begin{aligned}
 \ln\left(\frac{P(Y=1)}{1-P(Y=1)}\right) &= \beta_0 + \beta_1 RUC + \beta_2 Sierra + \beta_3 Selva \\
 &\quad + \beta_4 (RUC \times Sierra) + \beta_5 (RUC \times Selva) \\
-&\quad + \beta_6 Sector + \beta_7 Tamano + \beta_8 Genero \\
-&\quad + \beta_9 Ventas_{2021} + \beta_{10} Productividad + \beta_{11} DigitalScore \\
-&\quad + \beta_{12} Tributos + \beta_{13} Remuneraciones \\
-&\quad + \beta_{14} TipoLocal + \beta_{15} Regimen + \varepsilon
+&\quad + \beta_6 Sector + \beta_7 Genero + \beta_8 Ventas_{2021} \\
+&\quad + \beta_9 Productividad + \beta_{10} DigitalScore \\
+&\quad + \beta_{11} Tributos + \beta_{12} Remuneraciones \\
+&\quad + \beta_{13} TipoLocal + \beta_{14} Regimen + \varepsilon
 \end{aligned}
 $$
 
@@ -201,7 +191,7 @@ La elección del modelo logit sobre alternativas como probit o cloglog se justif
 
 ## 2.4 Análisis de Resultados
 
-El modelo logit estimado incorpora 1,327,956 observaciones con ajuste global estadísticamente significativo (Wald $\chi^2$=1581.95, p<0.0001). El Pseudo-R² de McFadden de 0.0463 es consistente con literatura metodológica sobre modelos logísticos aplicados a fenómenos con alta heterogeneidad no observable (Hemmert et al., 2018). La prueba VIF confirma ausencia de multicolinealidad problemática (VIF promedio=1.20, máximo=1.57 para ventas), validando la inclusión simultánea de controles correlacionados. Errores estándar clusterizados por código CIIU de 4 dígitos controlan correlación intra-industrial.
+El modelo logit estimado incorpora 1,327,956 observaciones con ajuste global estadísticamente significativo (Wald $\chi^2$=1581.95, p<0.0001). El Pseudo-R² de McFadden de 0.0463 es consistente con literatura metodológica sobre modelos logísticos aplicados a fenómenos con alta heterogeneidad no observable (Hemmert et al., 2016). La prueba VIF confirma ausencia de multicolinealidad problemática (VIF promedio=1.20, máximo=1.57 para ventas), validando la inclusión simultánea de controles correlacionados. Errores estándar clusterizados por código CIIU de 4 dígitos controlan correlación intra-industrial.
 
 La Tabla 2 presenta resultados del modelo logit, revelando efectos contraintuitivos de formalización sobre supervivencia. El coeficiente RUC en Costa (β₁=-0.2161, SE=0.0802, z=-2.70, p=0.007) es negativo y estadísticamente significativo, correspondiendo a un odds ratio de 0.8057 (IC 95%: 0.688-0.943). Esto indica que empresas formales en Costa reducen sus chances de supervivencia en 19.4% versus informales, manteniendo constantes las demás variables. Este resultado contradice la hipótesis inicial pero revela dinámicas complejas de formalización en contexto post-COVID.
 
@@ -270,7 +260,7 @@ Log pseudolikelihood & \multicolumn{5}{c}{$-877,190.14$} \\
 \end{longtable}
 \end{ThreePartTable}
 
-Los términos de interacción revelan heterogeneidad regional crítica. RUC×Sierra (β₄=0.2622, SE=0.0744, z=3.53, p<0.001) es positivo y altamente significativo, indicando que el efecto de formalización en Sierra difiere sustancialmente de Costa. El efecto total en Sierra es β₁+β₄=-0.2161+0.2622=0.0461 (OR=1.0472), prácticamente neutral o levemente positivo. RUC×Selva (β₅=-0.0126, p=0.841) no alcanza significancia, confirmando que el efecto en Selva es estadísticamente indistinguible de Costa. Tests de heterogeneidad confirman diferencias regionales: prueba conjunta de interacciones rechaza efectos homogéneos ($\chi^2$=12.81, p=0.0016); comparación Sierra versus Costa es altamente significativa ($\chi^2$=12.43, p=0.0004); comparación Selva versus Costa no significativa ($\chi^2$=0.04, p=0.841).
+Los términos de interacción revelan heterogeneidad regional crítica. RUC×Sierra (β₄=0.2622, SE=0.0744, z=3.53, p<0.001) es positivo y altamente significativo, indicando que el efecto de formalización en Sierra difiere sustancialmente de Costa. El efecto total en Sierra es $\beta_1$ + $\beta_2$ =-0.2161+0.2622=0.0461 (OR=1.0472), prácticamente neutral o levemente positivo. RUC×Selva (β₅=-0.0126, p=0.841) no alcanza significancia, confirmando que el efecto en Selva es estadísticamente indistinguible de Costa. Tests de heterogeneidad confirman diferencias regionales: prueba conjunta de interacciones rechaza efectos homogéneos ($\chi^2$=12.81, p=0.0016); comparación Sierra versus Costa es altamente significativa ($\chi^2$=12.43, p=0.0004); comparación Selva versus Costa no significativa ($\chi^2$=0.04, p=0.841).
 
 Las variables de control exhiben signos teóricamente esperados, validando la especificación del modelo. Productividad laboral (OR=1.0132 por mil soles, p<0.001) y ventas (OR=1.0003, p<0.001) incrementan supervivencia, consistente con el modelo de Jovanovic donde mayor eficiencia θ y escala operativa mejoran rentabilidad π. Digital Score muestra efecto negativo contraintuitivo (OR=0.8950 por unidad, p<0.001), posiblemente reflejando que empresas en dificultades adoptaron estrategias digitales reactivas durante la pandemia sin lograr mejoras inmediatas de rentabilidad. Régimen tributario presenta efectos fuertemente positivos: RUS incrementa chances en 32.7%, RER en 25.9%, RMT en 84.5%, Régimen General en 218.3%, sugiriendo que empresas con capacidad de operar bajo regímenes más sofisticados poseen características organizacionales superiores. Variables como sector, sexo del gerente, tributos y remuneraciones resultaron no significativas estadísticamente.
 
@@ -341,7 +331,7 @@ Log pseudolikelihood & \multicolumn{5}{c}{$-877,190.14$} \\
 \end{longtable}
 \end{ThreePartTable}
 
-El patrón de resultados contradice predicciones teóricas convencionales, pero revela dinámicas complejas del proceso de formalización en contextos de alta informalidad estructural. Tres explicaciones complementarias reconcilian estos hallazgos con el marco teórico. Primero, el contexto temporal de 2021 como año de recuperación post-COVID introduce distorsiones donde costos inmediatos de cumplimiento superan beneficios de mediano plazo, especialmente cuando solo 6.68% de MYPEs acceden a financiamiento formal (Aliaga, 2017). Segundo, selección adversa no observable puede generar causalidad reversa si empresas con menor viabilidad intrínseca formalizan reactivamente para acceder a programas de emergencia (Reactiva Perú, FAE-MYPE). Tercero, el horizonte temporal captura únicamente supervivencia de corto plazo, insuficiente para que beneficios estratégicos de formalización— (eputación, contratos públicos, expansión interregional) se materialicen completamente. La Figura 1 ilustra gráficamente estos efectos marginales por región, evidenciando la heterogeneidad espacial documentada.
+El patrón de resultados contradice predicciones teóricas convencionales, pero revela dinámicas complejas del proceso de formalización en contextos de alta informalidad estructural. Tres explicaciones complementarias reconcilian estos hallazgos con el marco teórico. Primero, el contexto temporal de 2021 como año de recuperación post-COVID introduce distorsiones donde costos inmediatos de cumplimiento superan beneficios de mediano plazo, especialmente cuando solo 6.68% de MYPEs acceden a financiamiento formal (Aliaga, 2017). Segundo, selección adversa no observable puede generar causalidad reversa si empresas con menor viabilidad intrínseca formalizan reactivamente para acceder a programas de emergencia (Reactiva Perú, FAE-MYPE). Tercero, el horizonte temporal captura únicamente supervivencia de corto plazo, insuficiente para que beneficios estratégicos de formalización (reputación, contratos públicos, expansión interregional) se materialicen completamente. La Figura 1 ilustra gráficamente estos efectos marginales por región, evidenciando la heterogeneidad espacial documentada.
 
 \begin{figure}[H]
 \caption{Efectos Marginales de la Formalización (RUC) sobre Supervivencia por Región}
@@ -352,7 +342,7 @@ El patrón de resultados contradice predicciones teóricas convencionales, pero 
 \raggedright\small\textit{Fuente: Elaboración propia con datos del V Censo Nacional Económico 2022 (INEI). Nota: Las barras representan el incremento en puntos porcentuales de la probabilidad de supervivencia asociado a la posesión de RUC, evaluado en valores medios de las variables de control. Intervalos de confianza al 95\%.}
 \end{figure}
 
-La heterogeneidad regional refleja diferencias estructurales en mercados laborales, densidad empresarial e infraestructura institucional. En Costa, donde se concentra 66.5% de MYPEs formales, la competencia intensa en mercados saturados magnifica costos relativos de cumplimiento regulatorio sin garantizar ventajas competitivas diferenciadas, explicando el efecto negativo. En Sierra, donde solo 26.2% de MYPEs operan, la formalización podría funcionar como señal de seriedad empresarial en mercados menos competitivos, atenuando penalidades observadas en otras regiones, aunque limitaciones de infraestructura digital (39% acceso internet en áreas urbanas serranas versus 59% en Lima, INEI 2021) impiden que este efecto señalizador alcance significancia robusta. En Selva, barreras logísticas y dispersión poblacional neutralizan tanto costos como beneficios, replicando patrones negativos similares a Costa.
+La heterogeneidad regional refleja diferencias estructurales en mercados laborales, densidad empresarial e infraestructura institucional. En Costa, donde se concentra 66.5% de MYPEs formales, la competencia intensa en mercados saturados magnifica costos relativos de cumplimiento regulatorio sin garantizar ventajas competitivas diferenciadas, explicando el efecto negativo. En Sierra, donde solo 26.2% de MYPEs operan, la formalización podría funcionar como señal de seriedad empresarial en mercados menos competitivos, atenuando penalidades observadas en otras regiones, aunque limitaciones de infraestructura digital (39% acceso internet en áreas urbanas serranas versus 59% en Lima, Instituto Nacional de Estadística e Informática [INEI], 2020) impiden que este efecto señalizador alcance significancia robusta. En Selva, barreras logísticas y dispersión poblacional neutralizan tanto costos como beneficios, replicando patrones negativos similares a Costa.
 
 El análisis de efectos marginales según niveles de ventas revela no linealidades importantes. La Figura 2 muestra cómo el efecto marginal de la formalización varía según la escala operativa de la empresa, sugiriendo que los costos del RUC son heterogéneos no solo geográficamente sino también según tamaño empresarial.
 
@@ -365,109 +355,62 @@ El análisis de efectos marginales según niveles de ventas revela no linealidad
 \raggedright\small\textit{Fuente: Elaboración propia con datos del V Censo Nacional Económico 2022 (INEI). Nota: El gráfico muestra la relación no lineal entre ventas anuales y el efecto marginal de RUC sobre supervivencia, calculado mediante el comando margins en Stata. La línea representa valores predichos y el área sombreada intervalos de confianza al 95\%.}
 \end{figure}
 
-El análisis por régimen tributario complementa estos hallazgos, evidenciando que el tipo de régimen tributario bajo el cual opera una empresa formal modula significativamente su probabilidad de supervivencia. La Figura 3 ilustra las probabilidades predichas de supervivencia por régimen tributario, controlando por las demás características empresariales.
+Respecto al régimen tributario, los coeficientes positivos y significativos observados (RUS: OR=1.327, RER: OR=1.259, RMT: OR=1.845, Régimen General: OR=3.183) requieren interpretación cautelosa debido a potenciales problemas de simultaneidad. Es plausible que empresas con mayor viabilidad intrínseca, derivada de características no observables como capacidad gerencial, acceso a redes empresariales o eficiencia organizacional, autoseleccionen regímenes más complejos precisamente porque poseen la capacidad operativa para absorber los costos administrativos asociados. En este escenario, el efecto positivo capturado no refleja necesariamente que el régimen tributario per se incremente la supervivencia, sino que empresas inherentemente más productivas optan por regímenes sofisticados. La dirección causal requiere métodos de identificación adicionales, como variables instrumentales o diseños cuasi-experimentales que permitan aislar el efecto causal del régimen sobre supervivencia del efecto de autoselección.
 
-\begin{figure}[H]
-\caption{Probabilidad de Supervivencia según Régimen Tributario}
-\label{fig:supervivencia-regimen}
-\centering
-\includegraphics[width=0.85\textwidth]{media/3. Probabilidad-supervivencia-regimen-tributario-chart.pdf}
-
-\raggedright\small\textit{Fuente: Elaboración propia con datos del V Censo Nacional Económico 2022 (INEI). Nota: Las barras representan probabilidades predicadas de supervivencia para empresas operando bajo diferentes regímenes tributarios (RUS: Régimen Único Simplificado, RER: Régimen Especial de Renta, RG: Régimen General, RMT: Régimen MYPE Tributario), manteniendo constantes las demás variables en sus valores medios. Intervalos de confianza al 95\%.}
-\end{figure}
-
-Finalmente, la capacidad predictiva del modelo se evalúa mediante curvas ROC (Receiver Operating Characteristic). La Figura 4 presenta la curva ROC del modelo logit con interacciones regionales, evidenciando capacidad discriminatoria moderada con área bajo la curva de 0.6367. Este resultado indica que el modelo captura parcialmente los factores determinantes de supervivencia empresarial, sugiriendo que variables no observables desempeñan un rol relevante en el contexto peruano.
+Finalmente, la capacidad predictiva del modelo se evalúa mediante curvas ROC (Receiver Operating Characteristic). La Figura 3 presenta la curva ROC del modelo logit con interacciones regionales, evidenciando capacidad discriminatoria moderada con área bajo la curva de 0.6367. Este resultado indica que el modelo captura parcialmente los factores determinantes de supervivencia empresarial, sugiriendo que variables no observables desempeñan un rol relevante en el contexto peruano.
 
 \begin{figure}[H]
 \caption{Curva ROC del Modelo Logit: Capacidad Predictiva de Supervivencia Empresarial}
 \label{fig:curva-roc}
 \centering
-\includegraphics[width=0.85\textwidth]{media/4. Capacidad-predictiva-modelo-chart.png}
+\includegraphics[width=0.85\textwidth]{media/3. Capacidad-predictiva-modelo-chart.png}
 
 \raggedright\small\textit{Fuente: Elaboración propia con datos del V Censo Nacional Económico 2022 (INEI). Nota: La curva ROC evalúa el trade-off entre sensibilidad (tasa de verdaderos positivos) y especificidad (1 - tasa de falsos positivos) para diferentes umbrales de clasificación. El área bajo la curva (AUC) de 0.6367 indica capacidad discriminatoria moderada del modelo. La línea diagonal representa desempeño de un clasificador aleatorio (AUC=0.50).}
 \end{figure}
-\clearpage
+
 
 # 3. CONCLUSIONES
 
 El análisis econométrico con 1,327,956 MYPEs revela hallazgos que contradicen parcialmente las hipótesis iniciales. Contrario a predicciones teóricas del modelo de Jovanovic (1982), la formalización mediante RUC reduce la probabilidad de supervivencia en Costa (-5.09 pp, p<0.05) y Selva (-5.41 pp, p<0.05). En Sierra se observa efecto positivo no significativo (+1.08 pp, p=0.224), aunque la prueba de heterogeneidad confirma diferencias estadísticamente significativas respecto a Costa ($\chi^2$=12.43, p=0.0004). La prueba conjunta de interacciones regionales rechaza efectos homogéneos ($\chi^2$=12.81, p=0.0016), validando heterogeneidad territorial sustancial. Estos resultados rechazan ambas hipótesis específicas: ni la formalización incrementa uniformemente supervivencia, ni los efectos son más pronunciados en Costa.
 
-La contradicción entre marco teórico y evidencia empírica se reconcilia mediante tres mecanismos complementarios. Primero, el contexto temporal de 2021 como año de recuperación post-pandemia introduce distorsiones donde costos inmediatos de cumplimiento tributario y administrativo superan beneficios de mediano plazo, particularmente cuando solo 6.68% de MYPEs accede a financiamiento formal (Aliaga, 2017), limitando la materialización de ventajas esperadas de formalización. Segundo, problemas de selección adversa no observable generan causalidad reversa si empresas con menor viabilidad intrínseca formalizan reactivamente para acceder a programas de apoyo gubernamental (Reactiva Perú, FAE-MYPE), confundiendo el efecto causal de RUC con características pre-existentes de empresas en dificultades. Tercero, el horizonte de análisis captura únicamente supervivencia de corto plazo (año fiscal 2021), insuficiente para que beneficios estratégicos de formalización (reputación empresarial, acceso a contratos públicos, expansión interregional) se materialicen completamente. Jovanovic (1982) enfatiza que la eficiencia $\theta$ se revela gradualmente mediante interacción con mercados, proceso incompatible con observación transversal limitada a un año post-crisis.
+Tres mecanismos complementarios permiten reconciliar la aparente contradicción entre predicciones teóricas y hallazgos empíricos. En primer lugar, el año 2021 representa un período de recuperación post-pandemia en el cual las cargas administrativas y fiscales inmediatas de la formalización exceden los retornos esperables en el mediano plazo, especialmente considerando que únicamente 6.68% de las MYPEs logra acceder a crédito formal (Aliaga, 2017), lo cual restringe la concreción de beneficios potenciales asociados al estatus formal. En segundo lugar, dinámicas de selección adversa no observables pueden inducir causalidad inversa: si las firmas con menores perspectivas de viabilidad optan por formalizarse como estrategia reactiva para calificar a programas de asistencia estatal (Reactiva Perú, FAE-MYPE), el efecto causal del RUC se confunde con atributos preexistentes de empresas vulnerables. En tercer lugar, la ventana temporal analizada (ejercicio fiscal 2021) captura exclusivamente efectos de corto plazo, período insuficiente para que ventajas estratégicas de la formalización (construcción reputacional, participación en contrataciones públicas, expansión geográfica) logren materializarse plenamente. Como señala Jovanovic (1982), el parámetro de eficiencia $\theta$ se descubre progresivamente mediante la interacción empresarial con mercados, dinámica incompatible con el análisis de corte transversal limitado a un año posterior a la crisis.
 
-La heterogeneidad regional documentada refleja diferencias estructurales en mercados laborales, densidad empresarial e infraestructura institucional. En Costa, donde se concentra 66.5% de MYPEs formales, la competencia intensa en mercados saturados magnifica los costos relativos de cumplimiento regulatorio sin garantizar ventajas competitivas diferenciadas, explicando el efecto negativo observado. En Sierra, donde solo 26.2% de MYPEs operan, la formalización podría funcionar como señal de seriedad empresarial en mercados menos competitivos con menor densidad de empresas formales, atenuando las penalidades observadas en otras regiones, aunque limitaciones de infraestructura digital (39% acceso a internet en áreas urbanas serranas versus 59% en Lima, INEI 2021) impiden que este efecto señalizador alcance significancia estadística robusta. En Selva, barreras logísticas severas y dispersión poblacional neutralizan simultáneamente tanto costos como beneficios de formalización, replicando patrones negativos similares a Costa.
+Los patrones de heterogeneidad regional observados responden a disparidades estructurales en configuraciones de mercados laborales, concentración empresarial y desarrollo institucional. La región Costa, que alberga 66.5% de las MYPEs formalizadas, exhibe mercados altamente competitivos y saturados donde las obligaciones regulatorias incrementan los costos operativos relativos sin generar diferenciación competitiva sustancial, fenómeno que explica el efecto negativo identificado. En la Sierra, donde apenas 26.2% de las MYPEs opera, la formalización podría operar como mecanismo de señalización de solvencia empresarial en entornos menos competitivos con baja densidad de firmas registradas, mitigando así las penalidades detectadas en otras macrorregiones; sin embargo, las carencias en infraestructura digital (39% de penetración de internet en zonas urbanas serranas frente a 59% en Lima, según el Instituto Nacional de Estadística e Informática [INEI], 2020) obstaculizan que este efecto señalizador alcance robustez estadística. En la Selva, las severas restricciones logísticas y la elevada dispersión demográfica anulan simultáneamente tanto las desventajas como las potenciales ventajas de la formalización, reproduciendo efectos negativos análogos a los de la Costa.
 
-Las variables de control exhiben signos teóricamente esperados, validando la especificación del modelo. Productividad laboral (OR=1.0132, p<0.001) y ventas (OR=1.1566, p<0.001) incrementan supervivencia consistentemente con el modelo de selección de Jovanovic, donde mayor eficiencia $\theta$ y escala operativa mejoran rentabilidad $\pi$. Digital Score muestra efectos positivos (OR=1.26 por instrumento adicional, p<0.001), confirmando la relevancia de adopción tecnológica post-COVID como factor crítico de resiliencia empresarial. Sector productivo presenta mayor supervivencia que comercio (OR=1.40, p<0.01), y régimen tributario más complejo (RER, RG) correlaciona con empresas más consolidadas. El ajuste global es estadísticamente significativo (Wald $\chi^2$=1581.95, p<0.0001) con capacidad clasificatoria del 87.3% y área bajo curva ROC de 0.6367, indicando capacidad discriminatoria moderada del modelo. El pseudo R² de 0.0463, aunque modesto, es consistente con literatura metodológica que documenta valores sistemáticamente bajos en modelos logísticos aplicados a fenómenos con alta heterogeneidad no observable (Hemmert et al., 2018), especialmente en muestras grandes donde significancia estadística no implica pseudo R² elevados.
+Las variables de control exhiben signos teóricamente esperados, validando la especificación del modelo. Productividad laboral (OR=1.0132, p<0.001) y ventas (OR=1.0003, p<0.001) incrementan supervivencia consistentemente con el modelo de selección de Jovanovic, donde mayor eficiencia $\theta$ y escala operativa mejoran rentabilidad $\pi$. Digital Score muestra efecto negativo contraintuitivo (OR=0.8950, p<0.001), posiblemente reflejando que empresas en dificultades adoptaron estrategias digitales reactivas durante la pandemia sin lograr mejoras inmediatas de rentabilidad. Régimen tributario presenta efectos fuertemente positivos, aunque estos coeficientes requieren interpretación cautelosa debido a problemas potenciales de simultaneidad: empresas con mayor viabilidad intrínseca pueden autoseleccionarse en regímenes más complejos porque poseen capacidad operativa para absorber costos administrativos asociados. Variables como sector, sexo del gerente, tributos y remuneraciones resultaron no significativas estadísticamente. El ajuste global es estadísticamente significativo (Wald $\chi^2$=1581.95, p<0.0001) con área bajo curva ROC de 0.6367, indicando capacidad discriminatoria moderada del modelo. El pseudo R² de 0.0463, aunque modesto, es consistente con literatura metodológica que documenta valores sistemáticamente bajos en modelos logísticos aplicados a fenómenos con alta heterogeneidad no observable (Hemmert et al., 2018), especialmente en muestras grandes donde significancia estadística no implica pseudo R² elevados.
 
-La limitación fundamental radica en el diseño transversal del V Censo Nacional Económico 2022, que impide establecer causalidad definitiva entre formalización y supervivencia. La observación del estado operativo en un único año (2021) no permite rastrear trayectorias empresariales, cambios en estatus de formalización ni exposición temporal a beneficios acumulativos. No obstante, el censo constituye la única fuente que incluye simultáneamente empresas formales e informales con información desagregada a nivel individual, superando bases administrativas que solo registran empresas formales o datos agregados por región que imposibilitan el análisis de heterogeneidad individual requerido por el modelo de Jovanovic (1982).
+La principal restricción metodológica deriva de la naturaleza transversal del V Censo Nacional Económico 2022, que imposibilita inferencias causales definitivas sobre la relación entre formalización y supervivencia. La captura del estado operativo durante un único ejercicio fiscal (2021) excluye la posibilidad de documentar trayectorias longitudinales de las firmas, transiciones en el estatus de formalización o acumulación temporal de beneficios. Sin embargo, el censo representa la única fuente de datos que incorpora simultáneamente unidades formales e informales con desagregación a nivel microeconómico individual, aventajando a registros administrativos que únicamente documentan empresas formalizadas o a estadísticas agregadas regionalmente que imposibilitan el análisis de heterogeneidad microeconómica exigido por el marco conceptual de Jovanovic (1982).
 
 El horizonte temporal de supervivencia (año fiscal 2021) captura únicamente efectos de corto plazo, insuficiente para que beneficios estratégicos de formalización (reputación empresarial, acceso a contratos públicos, expansión interregional) se materialicen. Esta limitación es particularmente relevante dado el contexto post-COVID-19, donde distorsiones macroeconómicas pueden dominar efectos microeconómicos de formalización. Finalmente, el desbalance muestral hacia microempresas (96.6%) refleja fielmente la composición del tejido empresarial peruano, pero limita generalización hacia pequeñas empresas más consolidadas. Errores estándar clustered por sector mitigan heterogeneidad no observada, pero análisis estratificado podría revelar dinámicas diferenciadas que el modelo agregado enmascara.
 
-Los hallazgos demandan reformas estructurales en estrategias de formalización, contribuyendo al Objetivo de Desarrollo Sostenible 8. Primero, abandonar enfoques nacionales homogéneos en favor de políticas regionales diferenciadas. En Costa, donde formalización reduce supervivencia (-5.09 pp), SUNAT y el Ministerio de Producción deben reducir costos administrativos mediante ventanillas únicas digitales y simplificación tributaria, equilibrando la ecuación costo-beneficio. En Sierra, donde efectos son neutrales, intensificar acompañamiento técnico post-formalización y subsidiar conectividad digital para potenciar el efecto señalizador de RUC en mercados menos saturados. En Selva, inversiones en infraestructura logística son prerrequisito para que formalización genere beneficios, dado que dispersión poblacional neutraliza actualmente tanto costos como ventajas.
+Los hallazgos demandan reformas estructurales en estrategias de formalización, contribuyendo al Objetivo de Desarrollo Sostenible 8. Primero, abandonar enfoques nacionales homogéneos en favor de políticas regionales diferenciadas. En Costa, donde formalización reduce supervivencia (-5.09 pp), la Superintendencia Nacional de Aduanas y de Administración Tributaria (SUNAT) y el Ministerio de Producción deben reducir costos administrativos mediante ventanillas únicas digitales y simplificación tributaria, equilibrando la ecuación costo-beneficio. En Sierra, donde efectos son neutrales, intensificar acompañamiento técnico post-formalización y subsidiar conectividad digital para potenciar el efecto señalizador de RUC en mercados menos saturados. En Selva, inversiones en infraestructura logística son prerrequisito para que formalización genere beneficios, dado que dispersión poblacional neutraliza actualmente tanto costos como ventajas.
 
 Segundo, transformar formalización de trámite administrativo a intervención integral. Dado que solo 6.68% de MYPEs acceden a financiamiento formal (Aliaga, 2017), implementar líneas de crédito condicionadas a RUC con tasas preferenciales y períodos de gracia permitiría materializar beneficios inmediatos. Capacitación en gestión financiera y contabilidad formal debe acompañar obligatoriamente el registro, permitiendo capitalizar oportunidades que brinda el estatus formal. La evidencia de selección adversa exige focalizar apoyos en empresas con viabilidad de mediano plazo, implementando sistemas de evaluación que distingan formalización proactiva (estrategia de crecimiento) de formalización reactiva (respuesta a crisis). Incentivos indiscriminados atraen principalmente empresas en dificultades, explicando parcialmente los efectos negativos observados.
 
 Finalmente, inversiones complementarias en infraestructura digital y acceso a mercados son condiciones necesarias para que formalización genere efectos positivos en regiones rezagadas, donde limitaciones estructurales dominan, actualmente, incentivos microeconómicos.
 \clearpage
 
-# 4. REFERENCIAS
+# 4. REFERENCIAS BIBLIOGRÁFICAS
 
-Afan Torres et al. (2025). Factors influencing the digitization process of Peruvian SMEs: Management education, internationalization and business size. *Cogent Business & Management, 12*(1). <https://doi.org/10.1080/23311975.2025.2472017>
+Aliaga, S. (2017). Structure and financial costs for MYPES: The Peruvian case (MPRA Paper No. 91404). Munich Personal RePEc Archive. <https://mpra.ub.uni-muenchen.de/91404/>
 
-Aliaga, S. (2017). Structure and financial costs for MYPES: The Peruvian case (MPRA Paper No. 91404). *Munich Personal RePEc Archive*. <https://mpra.ub.uni-muenchen.de/91404/>
+Banco Mundial. (2020). Doing business 2020: Comparing business regulation in 190 economies. The World Bank Group. <https://documents1.worldbank.org/curated/en/688761571934946384/pdf/Doing-Business-2020-Comparing-Business-Regulation-in-190-Economies.pdf>
 
-Alvarez, L., Huamaní, E., & Coronado, Y. (2020). How does competition by informal and formal firms affect the innovation and productivity performance in Peru? A CDM approach (MPRA Paper No. 105332). *Munich Personal RePEc Archive*. <https://mpra.ub.uni-muenchen.de/105332/>
+Cameron, A. C., & Miller, D. L. (2015). A practitioner's guide to cluster-robust inference. *Journal of Human Resources, 50*(2), 317--372. <https://doi.org/10.3368/jhr.50.2.317>
 
-Asociación para el Progreso de la Dirección. (2023). Valor catastral y valor de mercado: diferencias y cálculos. APD. <https://www.apd.es/valor-catastral-y-valor-de-mercado-diferencias-y-calculos/>
-
-Banco de Crédito del Perú \[BCP\]. (2024). Seguro de Vida Ley. <https://www.viabcp.com/seguros/complementarios/seguro-vida-ley>
-
-Banco Interamericano de Desarrollo. (2020). *Financiamiento para las MYPES en América Latina: Retos y oportunidades*. <https://publications.iadb.org/es/instrumentos-de-financiamiento-para-las-micro-pequenas-y-medianas-empresas-en-america-latina-y-el>
-
-Banco Mundial. (2020). *Ease of doing business 2020*. The World Bank Group. <https://documents1.worldbank.org/curated/en/688761571934946384/pdf/Doing-Business-2020-Comparing-Business-Regulation-in-190-Economies.pdf>
-
-Barriga, L., Bautista, J., & Aguaded, I. (2022). Emprendimiento en Perú antes y durante la Covid-19: Determinantes, brecha en ingresos y eficiencia técnica. *Revista de Métodos Cuantitativos para la Economía y la Empresa, 34*, 378--405. <https://doi.org/10.46661/rev.metodoscuant.econ.empresa.8084>
-
-Bruce, D., Deskins, J., Hill, B., & Rork, J. (2007). Small business and state growth: An econometric investigation. <https://www.researchgate.net/publication/252187362_Small_Business_and_State_Growth_An_Econometric_Investigation>
-
-Cader, H. A., & Leatherman, J. C. (2009). Small business survival and sample selection bias. *Small Business Economics, 32*(2), 155--167. <https://doi.org/10.1007/s11187-009-9240-4>
-
-Cameron, A. C., & Miller, D. L. (2015). A practitioner's guide to cluster-robust inference. Journal of Human Resources, 50(2), 317–372. <https://doi.org/10.3368/jhr.50.2.317>
-
-Carrión-Cauja, C., Simbaña, L., & Bonilla, S. (2021). ¿El pago de impuestos genera una menor supervivencia empresarial? Un análisis de las empresas ecuatorianas de servicios. *X-Pedientes Económicos*. <https://portal.amelica.org/ameli/journal/392/3922449002/html/>
+Carrión-Cauja, C., Simbaña, L., & Bonilla, S. (2021). ¿El pago de impuestos genera una menor supervivencia empresarial? Un análisis de las empresas ecuatorianas de servicios. *X-Pedientes Económicos, 5*(12), 6--27. <https://portal.amelica.org/ameli/journal/392/3922449002/html/>
 
 Chacaltana, J. (2016). Peru, 2002-2012: Growth, structural change and formalization. *CEPAL Review, 119*, 7--23. <https://repositorio.cepal.org/server/api/core/bitstreams/df54953d-640c-499b-b8c6-19d7eea0bd99/content>
 
-Chirwa, E. W. (2008). Effects of gender on the performance of micro and small enterprises in Malawi. *Development Southern Africa, 25*(3), 347--362. <https://doi.org/10.1080/03768350802212139>
+Congreso de la República del Perú. (2013). Ley que modifica diversas leyes para facilitar la inversión, impulsar el desarrollo productivo y el crecimiento empresarial [Ley N.° 30056]. <https://cdn.www.gob.pe/uploads/document/file/3017949/Ley%2030056.pdf>
 
-Congreso de la República del Perú. (2013). Ley que modifica diversas leyes para facilitar la inversión, impulsar el desarrollo productivo y el crecimiento empresarial \[Ley No. 30056\]. <https://cdn.www.gob.pe/uploads/document/file/3017949/Ley> 30056.pdf
+Hemmert, G. A. J., Schons, L. M., Wieseke, J., & Schimmelpfennig, H. (2016). Log-likelihood-based pseudo-R² in logistic regression: Deriving sample-sensitive benchmarks. *Sociological Methods & Research, 49*(3), 699--728. <https://doi.org/10.1177/0049124116638107>
 
-Craioveanu, M., & Terrell, D. (2016). The impact of storms on firm survival: A Bayesian spatial econometric model for firm survival. In *Advances in econometrics* (Vol. 35, pp. 81--118). Emerald Group Publishing. <https://doi.org/10.1108/S0731-905320160000037010>
+Instituto Nacional de Estadística e Informática. (2020). Perú: Acceso y uso de las Tecnologías de Información y Comunicación en los hogares y por la población, 2010-2021. <https://cdn.www.gob.pe/uploads/document/file/4213770/Resumen%3A%20Per%C3%BA%3A%20Acceso%20y%20uso%20de%20las%20Tecnolog%C3%ADas%20de%20Informaci%C3%B3n%20y%20Comunicaci%C3%B3n%20en%20los%20hogares%20y%20por%20la%20poblaci%C3%B3n%2C%202010-2021.pdf?v=1677854835>
 
-David, T. F., & Félix, E. G. S. (en prensa). Performance of family-owned firms: The impact of gender at the management level. *Journal of Family Business Management*. <https://dspace.uevora.pt/rdpc/handle/10174/25266>
+Instituto Nacional de Estadística e Informática. (2022). V Censo Económico Nacional [Base de datos]. <https://proyectos.inei.gob.pe/microdatos/>
 
-Díaz, J. J., Chacaltana, J., Rigolini, J., & Ruiz, C. (2018). Pathways to formalization: Going beyond the formality dichotomy---The case of Peru (Policy Research Working Paper No. 8551). World Bank Group, Social Protection and Jobs Global Practice. <https://www.iza.org/publications/dp/11750/pathways-to-formalization-going-beyond-the-formality-dichotomy>
-
-EsSalud. (2024). *Seguro Complementario de Trabajo de Riesgo de EsSalud (+PROTECCIÓN)*. Plataforma del Estado Peruano. <https://www.gob.pe/452-seguro-complementario-de-trabajo-de-riesgo-de-essalud-proteccion-aportes>
-
-Estudio Jurídico 21. (2024). *Conoce el precio de asesoría legal en Perú*. <https://estudiojuridico21.com/blog/conoce-el-precio-de-asesoria-legal-en-peru/>
-
-Falck, O. (2007). *Emergence and survival of new businesses: Econometric analyses*. Physica-Verlag. <https://doi.org/10.1007/978-3-7908-1948-9>
-
-Freund, C., & Pierola Castro, M. D. (2010). Export entrepreneurs: Evidence from Peru (Policy Research Working Paper No. 5407). World Bank. <http://documents.worldbank.org/curated/en/849131468099277361>
-
-García-Salirrosas et al (2022). Factors that determine the formal entrepreneurship of young entrepreneurs in a developing country during a pandemic: Peruvian case. *Academy of Entrepreneurship Journal, 28*(Special Issue 2), 1--15. <https://www.abacademies.org/articles/factors-that-determine-the-formal-entrepreneurship-of-young-entrepreneurs-in-a-developing-country-during-a-pandemic-peruvian-case-13423.html>
-
-Herrera, D. (2020). MSME financing instruments in Latin America and the Caribbean during COVID-19. Inter-American Development Bank. <https://doi.org/10.18235/0002361>
-
-IAB & PwC. (2024). Informe de inversión en publicidad digital 2024. Interactive Advertising Bureau Perú.
-
-Instituto Nacional de Estadística e Informática. (2022). *V Censo Económico Nacional* \[Base de datos\]. <https://proyectos.inei.gob.pe/microdatos/>
-
-Instituto Nacional de Estadística e Informática. (2023). *Informe nacional sobre actividad empresarial*. <https://m.inei.gob.pe/biblioteca-virtual/boletines/demografia-empresarial-8237/1/>
-
-Instituto Nacional de Estadística e Informática. (2024). *PERÚ: V Censo Nacional Económico - Resultados definitivos*. <https://www.gob.pe/institucion/inei/informes-publicaciones/5638115-peru-v-censo-nacional-economico-resultados-definitivos>
-
-Instituto Nacional de Estadística e Informática. (2024). Perú: Estructura empresarial, 2021. <https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1948/libro.pdf>
+Instituto Nacional de Estadística e Informática. (2025). Demografía empresarial en el Perú: IV trimestre de 2024. <https://m.inei.gob.pe/media/MenuRecursivo/boletines/boletin-demografia-empresarial-4t24.pdf>
 
 Jovanovic, B. (1982). Selection and the evolution of industry. *Econometrica, 50*(3), 649--670. <https://doi.org/10.2307/1912606>
 
@@ -475,74 +418,16 @@ León Mendoza, J. C., & Valcárcel Pineda, P. (2022). Influencia de las caracter
 
 Liedholm, C. (2002). Small firm dynamics: Evidence from Africa and Latin America. *Small Business Economics, 18*(1--3), 227--242. <https://doi.org/10.1023/A:1015147826035>
 
-Mardikaningsih, R., Sudiyarto, S., & Sari, N. (2022). Business survival: Competence of micro, small and medium enterprises. *Journal of Social Science Studies, 9*(1), 1--10. <https://doi.org/10.5296/jsss.v9i1.20381>
-
-McPherson, M. A. (1996). Growth of micro and small enterprises in Southern Africa. *Journal of Development Economics, 48*(1), 253--277. <https://doi.org/10.1016/0304-3878(95)00027-5>
-
-Ministerio de Trabajo y Promoción del Empleo. (2024). *Informe trimestral del mercado laboral: Situación del empleo 2024, Trimestre I*. Dirección de Investigación Socio Económico Laboral. <https://www.gob.pe/institucion/mtpe/informes-publicaciones/5783668-informe-trimestral-del-mercado-laboral-situacion-del-empleo-en-2024-trimestre-i>
-
-Morán Santamaría, R. O., Llonto Caicedo, Y., Supo Rojas, D. G., \[hasta 20 autores\]. (2024). Analysis of the survival of agricultural exporting firms in Peru, 2009--2019. *F1000Research, 13*, 1437. <https://doi.org/10.12688/f1000research.158554.1>
-
-Moreno Pérez, A. R., Cuevas Rodríguez, E., & Michi Toscano, S. L. (2015). Determinantes de la supervivencia empresarial en la industria alimentaria de México, 2003-2008. *Trayectorias, 17*(41), 1--22. <http://www.redalyc.org/articulo.oa?id=60741185001>
-
-Ng-Henao, R. (2015). Marco metodológico para la determinación de la tasa de supervivencia empresarial en el sector industrial de la ciudad de Medellín en el periodo 2000-2010. Clío América, 9(18), 84--99. <https://revistas.unimagdalena.edu.co/index.php/clioamerica/article/view/1529/978>
-
-Oficina de Normalización Previsional \[ONP\]. (2024). SCTR Pensión. <https://www.onpsctr.gob.pe/sctr>
-
-Ortega-Argilés, R., & Moreno, R. (2005). Estrategias competitivas y supervivencia empresarial. Grupo de Investigación AQR, Universidad de Barcelona. <https://archivo.alde.es/encuentros.alde.es/anteriores/viiieea/trabajos/o/pdf/ortega.pdf>
-
-Palomino, Eric. (2024). ¿Cuál es el precio por metro cuadrado?. <https://tuscursosinmobiliarios.com/cual-es-el-precio-por-metro-cuadrado-agosto-2024/>
-
-Parra, J. F. (2011). Determinantes de la probabilidad de cierre de nuevas empresas en Bogotá. *Revista Facultad de Ciencias Económicas: Investigación y Reflexión, 19*(1), 27--53. <http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0121-68052011000100003>
-
-Pfeiffer, F., & Reize, F. (2000). Business start-ups by the unemployed---An econometric analysis based on firm data. *Labour Economics, 7*(5), 629--663. <https://doi.org/10.1016/S0927-5371(00)00016-6>
-
-Puebla, D., Tamayo, D., & Feijoó, E. (2018). Factores relacionados a la supervivencia empresarial: Evidencia para Ecuador. <https://dialnet.unirioja.es/descarga/articulo/7291242.pdf>
-
-PwC. (2024). Peru -- Other taxes. PwC Tax Summaries. <https://taxsummaries.pwc.com/peru/corporate/other-taxes>
-
-Quispe Arauco, E. W., Romero-Carazas, R., Apaza Romero, I., Ruiz Rodríguez, M. J., & Bernedo-Moreira, D. H. (2022). Factors and economic growth of Peruvian MYPES. *International Journal of Professional Business Review, 7*(3), Article e0689. <https://doi.org/10.26668/businessreview/2022.v7i3.e0689>
-
-RSM Perú. (2024). CTS (Compensación por Tiempo de Servicios) en el 2024. <https://www.rsm.global/peru/es/news/cts-compensacion-por-tiempo-de-servicios>
-
-Sagire, L. (2017). The impact of demographic and social factors on firm performance in Kenya. *Journal of Business and Economic Development, 2*(4), 255--261. <https://doi.org/10.11648/j.jbed.20170204.18>
-
-Scotiabank. (2024). Cómo calcular la CTS y cuándo la depositan. <https://www.scotiabank.com.pe/blog/como-calcular-cts-cuando-depositan>
-
-Servicio de Administración Tributaria de Lima \[SAT\]. (2024). Información de Impuesto Predial y Arbitrios. <https://www.sat.gob.pe/websitev9/tributosmultas/predialyarbitrios/informacion>
-
-Silupu, B., Usero, B., & Montoro-Sanchez, A. (2021). The transition toward the business formality of the Peruvian MSEs: How does the perception of entrepreneurs and the sector influence? *Academia Revista Latinoamericana de Administración, 34*(4), 536--559. <https://doi.org/10.1108/ARLA-05-2021-0106>
+Ministerio de Trabajo y Promoción del Empleo. (2024). Informe trimestral del mercado laboral: Situación del empleo en 2024, Trimestre I. <https://www.gob.pe/institucion/mtpe/informes-publicaciones/5783668-informe-trimestral-del-mercado-laboral-situacion-del-empleo-en-2024-trimestre-i>
 
 Solomon, O. H., Allen, T., & Wangombe, W. (2024). Analysing the factors that influence social media adoption among SMEs in developing countries. *Journal of International Entrepreneurship, 22*(2), 248--267. <https://doi.org/10.1007/s10843-023-00330-9>
 
-Spence, M. (1973). Job market signalling. *Quarterly Journal of Economics, 87*(3), 355--374. <https://doi.org/10.2307/1882010>
+StataCorp. (2021). *Stata* (Version 17) [Computer software]. StataCorp LLC. <https://www.stata.com>
 
-Superintendencia Nacional de Aduanas y de Administración Tributaria. (2024). *Contribuyentes inscritos según actividad económica, 2005-2024*. Oficina Nacional de Planeamiento y Estudios Económicos. <https://www.sunat.gob.pe/estadisticasestudios/nota_tributaria/cdro_C5.xlsx>
+Tonetto, J. L., Pique, J. M., Fochezatto, A., & Rapetti, C. (2024). Survival analysis of small business during COVID-19 pandemic, a Brazilian case study. *Economies, 12*(7), 184. <https://doi.org/10.3390/economies12070184>
 
-Superintendencia Nacional de Aduanas y de Administración Tributaria \[SUNAT\]. (2024). Nuevo Régimen Único Simplificado (Nuevo RUS). <https://emprender.sunat.gob.pe/ruc/regimenes-tributarios-mype/nuevo-regimen-unico-simplificado-nuevo-rus>
-
-Superintendencia Nacional de Aduanas y de Administración Tributaria \[SUNAT\]. (2024). Planilla Electrónica. <https://emprender.sunat.gob.pe/principales-impuestos/planilla/planilla-electronica>
-
-Superintendencia Nacional de Aduanas y de Administración Tributaria \[SUNAT\]. (2024). Unidad Impositiva Tributaria (UIT) 2024. Superintendencia Nacional de Administración Tributaria. <https://www.sunat.gob.pe/indicestasas/uit.html>
-
-Tonetto, J. L., Pique, J. M., Fochezatto, A., & Rapetti, C. (2024). Survival analysis of small business during COVID-19 pandemic, a Brazilian case study. *Economies, 12*(7), Article 184. <https://doi.org/10.3390/economies12070184>
-
-Torres, G. (2025). ¿Cuánto cuesta formalizar una empresa en el Perú? Trámites, requisitos, pasos y qué beneficios ofrece. *Gestión*. <https://gestion.pe/peru/cuanto-cuesta-formalizar-una-empresa-en-el-peru-tramites-requisitos-pasos-y-que-beneficios-ofrece-noticia>
-
-Tresierra, A. E., & Reyes, S. D. (2018). Effects of institutional quality and the development of the banking system on corporate debt. *Journal of Economics, Finance and Administrative Science, 23*(44), 113--124. <https://doi.org/10.1108/JEFAS-03-2017-0053>
-
-Van Auken, H., Madrid-Guijarro, A., & García-Pérez-de-Lema, D. (2008). Innovation and performance in Spanish manufacturing SMEs. *International Journal of Entrepreneurship and Innovation Management, 8*(1), 36--56. <https://doi.org/10.1504/IJEIM.2008.018611>
-
-Van Praag, C. M. (2003). Business survival and success of young small business owners (Tinbergen Institute Discussion Paper No. 03-050/3). <https://www.econstor.eu/bitstream/10419/86096/1/03050.pdf>
-
-Vargas Figueroa, J., Linares Guerrero, M., Díaz Angulo, S. J., & Mendó Callirgos, C. V. (2023). The deduction system as a tax compliance strategy: A Peruvian case. *IBIMA Business Review, 2023*, Article 239727. <https://doi.org/10.5171/2023.239727>
-
-Varona Castillo, L. (2015). Modelo de supervivencia empresarial a partir del índice Z de Altman (Documento de Trabajo No. 46). Asociación Peruana de Economía. <https://perueconomics.org/wp-content/uploads/2014/01/WP-46.pdf>
+Torres, G. (2025). ¿Cuánto cuesta formalizar una empresa en el Perú? Trámites, requisitos, pasos y qué beneficios ofrece. *Gestión*. <https://gestion.pe/peru/cuanto-cuesta-formalizar-una-empresa-en-el-peru-tramites-requisitos-pasos-y-que-beneficios-ofrece-noticia>
 
 Varona, L., & Gonzales, J. R. (2021). Dynamics of the impact of COVID-19 on the economic activity of Peru. *PLOS ONE, 16*(1), Article e0244920. <https://doi.org/10.1371/journal.pone.0244920>
 
-Vidyatmoko, D., & Hastuti, P. (2017). Identification of the determinants of entrepreneurial success: A multidimensional framework. *STI Policy and Management Journal, 2*(2), 163--178. <https://doi.org/10.14203/STIPM.2017.106>
-
 Yamada, G. (2009). Desempeño de la microempresa familiar en el Perú. *Apuntes, 64*, 5--29. <https://www.redalyc.org/articulo.oa?id=684077011001>
-
-Yamada, G., Lavado, P., & Rivera, G. (2023). Fear of labor rigidities: The role of expectations on employment growth in Peru. *Latin American Research Review, 58*(4), 875--891. <https://doi.org/10.1017/lar.2023.19>

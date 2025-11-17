@@ -221,7 +221,7 @@ header-includes:
         }
         
         # Define sections that should start on a new page
-        new_page_sections = {4, 5}  # Conclusions and References
+        new_page_sections = {5}  # Only References starts on new page
         
         # Process and add each section
         for i, section in enumerate(self.sections, 1):
@@ -248,7 +248,7 @@ header-includes:
                 document_parts.append("\\listoffigures\n\\newpage\n\n")
                 continue
             
-            # Add page break before sections that need it (Conclusions, References)
+            # Add page break before sections that need it (only References)
             if i in new_page_sections:
                 document_parts.append("\\clearpage\n\n")
             
@@ -269,9 +269,10 @@ header-includes:
             # Add section content (now starts at ## level)
             document_parts.append(content)
             
-            # Add page break between sections (except last or sections that start with newpage)
-            if i < len(self.sections) and (i + 1) not in new_page_sections:
-                document_parts.append("\n\\clearpage\n\n")
+            # No page breaks between Introduction, Methodology, and Conclusions (sections 2, 3, 4)
+            # Only add spacing between these sections
+            if i in {2, 3}:
+                document_parts.append("\n\n")
         
         # Join all parts
         merged_content = ''.join(document_parts)
