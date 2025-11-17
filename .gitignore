@@ -1,0 +1,17 @@
+# Large data files
+Base de datos 5to censo económico anual/
+*.dta
+*.SAV
+*.csv
+*.xlsx
+*.xls
+
+# System files
+.DS_Store
+*/.DS_Store
+~$*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
