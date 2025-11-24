@@ -111,10 +111,38 @@ class AcademicPaperMerger:
         
         return '\n'.join(processed)
     
+    def _process_academic_figures(self, content):
+        """Process academic figures to ensure proper indexing.
+        
+        Converts:
+        ### Gráfico X: Title
+        ![Alt](path)
+        
+        To:
+        ![Gráfico X: Title](path)
+        
+        This ensures:
+        1. The figure appears in \listoffigures (via pandoc)
+        2. The "Gráfico X" header is removed from the Table of Contents
+        """
+        # Pattern to match ### Gráfico ... followed by image
+        # Captures: 1=Full Title (Gráfico X: ...), 2=Image Path
+        pattern = r'^###\s+(Gráfico\s+\d+:[^\n]+)\n+!\[[^\]]*\]\(([^)]+)\)'
+        
+        def replace_figure(match):
+            title = match.group(1).strip()
+            path = match.group(2).strip()
+            return f'![{title}]({path})'
+            
+        return re.sub(pattern, replace_figure, content, flags=re.MULTILINE)
+
     def _process_images(self, content):
         """Process image references and ensure proper paths."""
         if not self.media_dir:
             return content
+        
+        # First process academic figures (headers -> captions)
+        content = self._process_academic_figures(content)
         
         # Find markdown image syntax: ![alt](path)
         def replace_image(match):
@@ -153,7 +181,8 @@ linestretch: 1.5
 documentclass: article
 lang: es
 header-includes:
-  - \renewcommand{\listtablename}{Índice de tablas}
+  - \renewcommand{\listtablename}{Lista de tablas}
+  - \renewcommand{\listfigurename}{Lista de figuras}
   - \usepackage{unicode-math}
   - \usepackage{fontspec}
   - \setmainfont{Latin Modern Roman}
@@ -215,13 +244,14 @@ header-includes:
         section_h1_titles = {
             1: None,  # Presentation - no H1 needed (has LaTeX title page)
             2: "# 1. INTRODUCCIÓN",
-            3: "# 2. APROXIMACIÓN METODOLÓGICA", 
-            4: "# 3. CONCLUSIONES",
-            5: None  # Referencias has its own H1 in the file
+            3: "# 2. ANÁLISIS SITUACIONAL DE LAS MYPES EN EL PERÚ",
+            4: "# 3. APROXIMACIÓN METODOLÓGICA", 
+            5: "# 4. CONCLUSIONES",
+            6: None  # Referencias has its own H1 in the file
         }
         
         # Define sections that should start on a new page
-        new_page_sections = {5}  # Only References starts on new page
+        new_page_sections = {6}  # Only References starts on new page
         
         # Process and add each section
         for i, section in enumerate(self.sections, 1):
@@ -257,7 +287,7 @@ header-includes:
                 document_parts.append(f"{section_h1_titles[i]}\n\n")
             
             # Clean content (removes top-level # heading, except for Referencias which keeps it)
-            keep_h1 = (i == 5)  # Keep H1 for Referencias (section 5)
+            keep_h1 = (i == 6)  # Keep H1 for Referencias (section 6)
             content = self._clean_section_content(section['content'], keep_h1=keep_h1)
             
             # Process various elements
@@ -269,9 +299,9 @@ header-includes:
             # Add section content (now starts at ## level)
             document_parts.append(content)
             
-            # No page breaks between Introduction, Methodology, and Conclusions (sections 2, 3, 4)
+            # No page breaks between Introduction, Hechos, Methodology, and Conclusions
             # Only add spacing between these sections
-            if i in {2, 3}:
+            if i in {2, 3, 4}:
                 document_parts.append("\n\n")
         
         # Join all parts
@@ -334,9 +364,10 @@ def main():
     input_files = [
         base_path / '0. PRESENTACIÓN.md',
         base_path / '1. INTRODUCCIÓN.md',
-        base_path / '2. APROXIMACIÓN METODOLÓGICA.md',
-        base_path / '3. CONCLUSIONES.md',
-        base_path / '4. REFERENCIAS.md'
+        base_path / '2. HECHOS ESTILIZADOS.md',
+        base_path / '3. APROXIMACIÓN METODOLÓGICA.md',
+        base_path / '4. CONCLUSIONES.md',
+        base_path / '5. REFERENCIAS.md'
     ]
     
     # Create merger instance
