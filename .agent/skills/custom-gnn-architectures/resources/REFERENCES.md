@@ -1,51 +1,28 @@
-# Documentation Resources
+# References
 
-This folder contains references to PyG documentation files that complement this skill.
+## Academic Papers
 
-## Primary References
+### Semi-Supervised Classification with Graph Convolutional Networks (GCN)
+**Citation**: Kipf, T. N., & Welling, M. (2017). Semi-supervised classification with graph convolutional networks. *ICLR*.
 
-- **04a_creating_message_passing_networks.md** - Complete tutorial on MessagePassing
-- **17_torch_geometric_nn.md** - Full neural network layer API reference
-- **31_gnn_cheatsheet.md** - Quick reference for GNN layers
+**Key Contributions**:
+- Introduced the spectral rule $H^{(l+1)} = \sigma(\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}H^{(l)}W^{(l)})$.
+- Bridged spectral graph theory with spatial message passing.
+- Proven effective for MSME survival prediction by capturing local neighborhood structures.
 
-## Key Concepts from Documentation
+### Graph Attention Networks (GAT)
+**Citation**: Veličković, P., Cucurull, G., Casanova, A., Romero, A., Lio, P., & Bengio, Y. (2018). Graph attention networks. *ICLR*.
 
-### The Message Passing Formula
+**Key Contributions**:
+- Introduced attention mechanisms to weigh neighbor importance.
+- Allows the model to focus on relevant competitors or supply chain partners.
 
-From `04a_creating_message_passing_networks.md`:
+### Distill: Understanding Graph Convolutions
+**Citation**: Daigavane, A., Ravindran, B., & Aggarwal, G. (2021). Understanding Convolutions on Graphs. *Distill*.
 
-$$
-\mathbf{x}_i^{(k)} = \gamma^{(k)} \left( \mathbf{x}_i^{(k-1)}, \bigoplus_{j \in \mathcal{N}(i)} \phi^{(k)}\left(\mathbf{x}_i^{(k-1)}, \mathbf{x}_j^{(k-1)}, \mathbf{e}_{j,i}\right) \right)
-$$
+**Key Concepts**:
+- **Polynomial Filters**: Expressing convolutions as polynomials of the Laplacian $L$.
+- **Chebyshev Polynomials (ChebNet)**: Fast approximation of spectral filters avoiding eigen-decomposition.
 
-Where:
-- $\phi$ = `message()` function
-- $\bigoplus$ = `aggregate()` function  
-- $\gamma$ = `update()` function
-
-### MessagePassing Methods
-
-| Method | Math Symbol | Purpose |
-|--------|-------------|---------|
-| `propagate()` | - | Start message passing |
-| `message()` | $\phi$ | Construct messages |
-| `aggregate()` | $\bigoplus$ | Combine messages |
-| `update()` | $\gamma$ | Update embeddings |
-
-### Variable Naming Convention
-
-In `message()`, use suffixes to access node features:
-- `x_j` → features of **source** (neighbor) nodes
-- `x_i` → features of **target** (central) nodes
-
-## GCN Layer Formula
-
-$$
-\mathbf{x}_i^{(k)} = \sum_{j \in \mathcal{N}(i) \cup \{i\}} \frac{1}{\sqrt{d_i} \cdot \sqrt{d_j}} \cdot \mathbf{W}^{\top} \cdot \mathbf{x}_j^{(k-1)} + \mathbf{b}
-$$
-
-## EdgeConv Formula
-
-$$
-\mathbf{x}_i^{(k)} = \max_{j \in \mathcal{N}(i)} h_\Theta(\mathbf{x}_i^{(k-1)}, \mathbf{x}_j^{(k-1)} - \mathbf{x}_i^{(k-1)})
-$$
+## Documentation
+- [PyG MessagePassing](https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#torch_geometric.nn.conv.MessagePassing)

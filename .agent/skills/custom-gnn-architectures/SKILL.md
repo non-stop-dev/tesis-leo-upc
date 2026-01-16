@@ -14,6 +14,25 @@ This skill provides expertise for building custom Graph Neural Network layers us
 - Creating novel aggregation schemes
 - Building GNN models for node-level classification (e.g., survival prediction)
 
+## Theoretical Foundations
+
+> **See**: `resources/REFERENCES.md` for detailed academic background
+
+### Spectral vs. Spatial Convolutions
+- **Spectral Domain**: Convolutions defined via the Graph Fourier Transform using the Graph Laplacian $L = D - A$.
+    - computationally expensive ($\mathcal{O}(N^3)$) due to eigen-decomposition.
+    - **ChebNet**: Approximates spectral filters using Chebyshev polynomials $T_k(x)$ up to order $K$, reducing complexity to $\mathcal{O}(K|E|)$.
+    - **GCN**: A first-order approximation ($K=1$) of ChebNet with additional constraints to avoid overfitting.
+
+- **Spatial Domain**: Message passing directly on the graph structure.
+    - **MessagePassing**: The spatial generalization where nodes aggregate information from local neighborhoods.
+    - Most modern GNNs (GraphSAGE, GAT) are spatial, avoiding the need for the entire graph structure during training (inductive).
+
+### Polynomial Filters
+A graph convolution can be viewed as learning a polynomial filter $g_\theta(\Lambda) = \sum_{k=0}^K \theta_k \Lambda^k$.
+- **Interpretation**: A $K$-th order polynomial captures information from $K$-hop neighbors.
+- **GCN** effectively uses $K=1$ but stacks layers to increase the receptive field.
+
 ## Core Concept: Message Passing
 
 GNNs can be described by the message passing framework:
@@ -89,6 +108,23 @@ What type of aggregation do you need?
 ├── Max pooling over neighbors → Use SAGEConv with aggr='max'
 └── Custom logic → Extend MessagePassing
 ```
+
+## Advanced Architectures: Skip Connections
+To prevent **oversmoothing** in deep GNNs (where node embeddings become indistinguishable), use skip connections:
+
+1.  **Residual Connections (ResNet)**:
+    $\mathbf{h}^{(k)} = \sigma(\text{Conv}(\mathbf{h}^{(k-1)})) + \mathbf{h}^{(k-1)}$
+    Simple element-wise addition. Requires same dimension.
+
+2.  **Jumping Knowledge Networks (JKN)**:
+    Combines embeddings from *all* layers at the final step.
+    $\mathbf{h}_v^{\text{final}} = \text{AGG}(\mathbf{h}_v^{(1)}, \mathbf{h}_v^{(2)}, \dots, \mathbf{h}_v^{(K)})$
+    Aggregation can be concatenation, max-pooling, or LSTM-attention.
+    *Effective for structure-oriented tasks where local information is preserved.*
+
+3.  **Highway GCN**:
+    Uses gating mechanisms to control information flow.
+    $\mathbf{T} = \sigma(\mathbf{W}_T \mathbf{h}^{(k-1)})$, $\mathbf{h}^{(k)} = \mathbf{T} \odot \text{Conv}(\mathbf{h}^{(k-1)}) + (1 - \mathbf{T}) \odot \mathbf{h}^{(k-1)}$
 
 ## Building a Complete Model
 

@@ -14,6 +14,19 @@ This skill provides expertise for working with heterogeneous graphs - graphs tha
 - You want to apply different transformations to different node/edge types
 - You need to convert a homogeneous model to work on heterogeneous data
 
+## Theoretical Concepts
+
+> **See**: `resources/REFERENCES.md` for detailed academic background
+
+### Meta-paths
+A sequence of relations defining a semantic connection between nodes.
+- Example: **Empresa $\xrightarrow{\text{ubicado}}$ Distrito $\xleftarrow{\text{ubicado}}$ Empresa** (Two companies in the same district).
+- **HAN (Heterogeneous Graph Attention Network)**: Uses attention to weigh the importance of different meta-paths.
+
+### Multiplex Graphs
+Nodes connected by multiple types of edges (e.g., "Competes with", "Collaborates with", "Supply chain").
+- In PyG, modeled as different `edge_index` entries in `HeteroData`.
+
 ## Heterogeneous Graph Structure
 
 A heterogeneous graph consists of:

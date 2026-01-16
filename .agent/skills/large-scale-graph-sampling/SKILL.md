@@ -28,7 +28,79 @@ Target nodes (batch of seeds)
 
 This creates a **subgraph** for each mini-batch.
 
-## The NeighborLoader
+## Theoretical Foundation (Hamilton et al., 2017)
+
+> **See**: `resources/REFERENCES.md` for detailed academic background
+
+### The Neighbor Explosion Problem
+
+GNNs face exponential neighborhood growth: $|\mathcal{N}^L(v)| = \mathcal{O}(d^L)$
+
+For a 2-layer GNN with average degree 50:
+- Without sampling: ~2,500 neighbors per node
+- With sampling `[25, 10]`: max 250 neighbors per node
+
+### GraphSAGE Solution (Hamilton et al., 2017)
+
+GraphSAGE (SAmple and aggreGatE) resolves the explosion problem by sampling a fixed-size neighborhood for each node at each layer.
+
+#### Inductive Learning vs Transductive
+- **Transductive (e.g., standard GCN)**: Learns embeddings for a specific fixed graph. Requires retraining for new nodes.
+- **Inductive (GraphSAGE)**: Learns *aggregator functions* that can generate embeddings for any node (seen or unseen) given its features and neighborhood. This is crucial for real-world applications where new nodes (e.g., new MSMEs) appear over time.
+
+#### GraphSAGE Embedding Generation (Forward Pass)
+For a specific node $v$, the embedding at layer $k$ is generated as:
+
+1.  **Sample**: Select a fixed-size set of neighbors $\mathcal{N}(v)$.
+2.  **Aggregate**: Combine neighbors' representations from previous layer $k-1$.
+    $$ \mathbf{h}_{\mathcal{N}(v)}^k \leftarrow \text{AGGREGATE}_k(\{\mathbf{h}_u^{k-1}, \forall u \in \mathcal{N}(v)\}) $$
+3.  **Update**: Concatenate with node's own representation and transform.
+    $$ \mathbf{h}_v^k \leftarrow \sigma(\mathbf{W}^k \cdot \text{CONCAT}(\mathbf{h}_v^{k-1}, \mathbf{h}_{\mathcal{N}(v)}^k)) $$
+4.  **Normalize**: $\mathbf{h}_v^k \leftarrow \mathbf{h}_v^k / \|\mathbf{h}_v^k\|_2$
+
+#### Aggregator Architectures
+The choice of aggregation function is critical:
+
+1.  **Mean Aggregator** (Simple & Efficient):
+    Takes the element-wise mean of neighbor vectors. Equivalent to GCN approximation.
+    $$ \text{AGG} = \text{mean}(\{\mathbf{h}_u^{k-1}\}) $$
+
+2.  **LSTM Aggregator** (High Capacity):
+    Uses an LSTM to aggregate neighbors. Since LSTMs are sequential, neighbors must be passed in a random permutation to enforce order invariance.
+
+3.  **Pooling Aggregator** (Max Pooling):
+    Passes each neighbor through an MLP, then applies element-wise max pooling. Captures distinct features in the neighborhood.
+    $$ \text{AGG} = \max(\{\sigma(\mathbf{W}_{pool}\mathbf{h}_u^{k-1} + \mathbf{b})\}) $$
+
+### Inductive Learning
+
+GraphSAGE learns to *aggregate*, not memorize node IDs. This enables:
+- Prediction on **new nodes** not seen during training
+- Generalization to future MSMEs entering the census
+
+## Understanding the Subgraph Output
+
+When `NeighborLoader` returns a batch:
+
+```python
+batch = next(iter(loader))
+
+# Key attributes:
+batch.x              # Features of ALL sampled nodes
+batch.edge_index     # RELABELED edges (0 to num_nodes-1)
+batch.n_id           # ORIGINAL node IDs (for mapping back)
+batch.batch_size     # Number of seed/target nodes
+```
+
+**Critical**: First `batch_size` nodes are your targets!
+
+```python
+# ✅ Correct: loss only on target nodes
+loss = F.cross_entropy(out[:batch.batch_size], batch.y[:batch.batch_size])
+
+# ❌ Wrong: includes context-only sampled nodes
+loss = F.cross_entropy(out, batch.y)
+```
 
 PyG's `NeighborLoader` handles sampling automatically:
 

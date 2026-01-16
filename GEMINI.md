@@ -14,6 +14,10 @@ To analyze the impact of formalization (holding a RUC) on the probability of bus
 *   **Sample Size:** 1,327,956 MSMEs.
 *   **Econometric Model:** Logistic Regression (Logit) with cluster-robust standard errors by 4-digit CIIU code.
 *   **Key Variables:** `Survival` (Dependent), `RUC` (Main Independent), `Net Sales`, `Productivity`, `Tax Regime` (`Régimen Tributario`), `Region` (Coast/Sierra/Selva), and interaction terms (`RUC × Region`).
+*   **Data Preprocessing Status:** Stata script (`limpieza.do`) now generates a GNN-ready dataset (`msme_gnn_preprocessed.dta`) containing:
+    *   **UBIGEO** (6-digit): `CCDD` + `CCPP` + `CCDI` for precise District location.
+    *   **CIIU 4-digit**: For sectoral competition edges.
+    *   **CIIU 2-digit**: For broad sector features.
 
 ### 1.4. Critical Findings from the Logit Model
 1.  **Counter-Intuitive Effect:** Formalization **reduces** the probability of survival in the **Coast** (-5.09 pp) and **Selva** (-5.41 pp), contradicting the initial hypothesis.
@@ -29,20 +33,22 @@ To refine the business survival econometric calculations by explicitly modeling 
 
 ### 2.2. Rationale (Extended Framework)
 *   **GNN in Presentation:** The slide deck (*NVIDIA intro_to_gnn.pptx*) confirms that GNNs are suitable for **Node-Level Classification** (which is the binary survival task: 0=No, 1=Yes).
-*   **GNN in Economics:** GNNs allow for modeling **Industrial Organization** and **Spatial Distribution** phenomena by capturing spillover or local competition effects, which form the basis of the heterogeneity findings in the thesis.
-*   **Mechanism:** The GNN's **"Message Passing"** process mimics the effect of geographic and sectoral *clustering*. The survival probability of an enterprise (node) will depend not only on its individual attributes (like **Productivity** and **Tax Regime**) but also on the aggregated attributes of its neighbors in the network (other MSMEs in its district/sector).
+*   **GNN in Economics:** GNNs allow for modeling **Industrial Organization** and **Spatial Distribution** phenomena by capturing spillover or local competition effects.
+*   **Inductive Learning (GraphSAGE):** We adopt an **Inductive** approach (Hamilton et al., 2017) to learn *aggregator functions* rather than fixed node embeddings. This allows predicting survival for *new enterprises* entering the market, a critical capabilities for dynamic economic analysis.
 
 ---
 
 ## 3. Data Mapping to Graph Structure
 
-The original database (executed with the `Código de Stata` script) must be converted into a **Graph Object** (`torch_geometric.Data` or similar) with the following structure:
+The clean database (`msme_gnn_preprocessed.dta`) will be converted into a PyG `HeteroData` object:
 
-| Graph Component | Original Variable/Data | Description |
-| **Nodes**       | Each observation (MSME) | A total of 1,327,956 nodes. |
-| **Features (X)**| `ventas_k`, `productividad_k`, `i.regimen`, `i.sector`, `tributos_k`, etc. | The explanatory variables from the Logit model. They must be standardized or normalized for Deep Learning. **(Note: Productivity and Tax Regime are key features).** |
-| **Label (Y)**   | `op2021_original`      | The binary survival variable (0/1). **Task:** Node-Level Classification. |
-| **Edges**       | **CRITICAL: Province, District, CIIU_4DIG** | Edges must be created between nodes to model the interaction/competition network: **Edge A (Geographic Location):** Sharing the same **District** (finest spatial granularity available). **Edge B (Sectoral):** Sharing the same **4-digit CIIU code** (sectoral competition). |
+| Graph Component | Variable Source | Description |
+|-----------------|-----------------|-------------|
+| **Nodes**       | Rows in `.dta` | 1,327,956 MSMEs. |
+| **Features (X)**| `ventas_uit`, `productividad`, `regimen`, `ciiu_2dig`, `digital_score` | Normalized numeric features + One-hot encoded categorical features. |
+| **Label (Y)**   | `op2021_ajustado` | Binary survival variable (0/1). |
+| **Edges**       | **Geo + Sector** | **Edge A (Agglomeration)**: Undirected edge if `ubigeo_i == ubigeo_j` (Same District).<br>**Edge B (Competition)**: Undirected edge if `ciiu_4dig_i == ciiu_4dig_j` (Same specific industry). |
+
 
 ---
 
@@ -57,76 +63,89 @@ The GNN model will be trained to minimize the classification loss for the `op202
 
 ---
 
-## 5. Consideraciones sobre Desbalance de Datos y Normalización
+## 5. Data Imbalance and Normalization Considerations
 
-### 5.1. Distribución Desbalanceada por Tamaño de Empresa
+### 5.1. Imbalanced Distribution by Firm Size
 
-La base de datos presenta una distribución altamente desbalanceada según el tamaño empresarial:
+The database presents a highly imbalanced distribution by firm size:
 
-| Tipo de Empresa | Proporción Aproximada | Implicancia |
-|-----------------|----------------------|-------------|
-| **Microempresas** | ~90%+ | Dominan el dataset |
-| **Pequeñas empresas** | ~8% | Subrepresentadas |
-| **Medianas empresas** | ~2% | Marginalmente representadas |
+| Firm Type | Approximate Proportion | Implication |
+|-----------|------------------------|-------------|
+| **Micro-enterprises** | ~90%+ | Dominate the dataset |
+| **Small enterprises** | ~8% | Underrepresented |
+| **Medium enterprises** | ~2% | Marginally represented |
 
-**Problema:** Sin corrección, el modelo GNN podría sesgarse hacia patrones de las microempresas, subestimando la dinámica de supervivencia de las pequeñas y medianas empresas.
+**Critical Verification Finding (16/01/2026):**
+The dataset contains **1,377,931 MSMEs**, with a survival rate of **96.2%** vs. **3.8%** closed.
+- **Action Item**: We MUST use **Class Weights** (Section 5.5) or focal loss during training. Without this, the model will trivially predict "Survived" for every node and achieve high accuracy but 0.0 F1-score for the minority class (closure prediction).
 
-### 5.2. Normalización Simétrica de Kipf & Welling
+## 6. Project Directory and Workflow Standard
 
-Para evitar que los nodos con **muchos vecinos dominen** la agregación de mensajes (típico en distritos densamente poblados o sectores con alta concentración de microempresas), se debe aplicar la **normalización simétrica** propuesta por Kipf & Welling (2017):
+All Python scripts related to GNN data treatment and modeling must be stored in:
+`Entrega 6 (paper GNN)/code/`
+
+**Naming Convention**: All scripts must be enumerated to represent the sequential workflow:
+1. `1_build_msme_graph.py`: Convert Stata DTA to PyG HeteroData.
+2. `2_visualize_clusters.py`: Generate heatmaps.
+3. `3_train_gnn.py`: Training pipeline.
+(Exception: `limpieza.do` remains in `database/` as the initial Stata cleaning step).
+
+### 5.2. Symmetric Normalization (Kipf & Welling)
+
+To prevent nodes with **many neighbors from dominating** message aggregation (typical in densely populated districts or sectors with high micro-enterprise concentration), the **symmetric normalization** proposed by Kipf & Welling (2017) must be applied:
 
 $$
 \hat{A} = D^{-1/2} A D^{-1/2}
 $$
 
-Donde:
-- $A$ es la matriz de adyacencia
-- $D$ es la matriz diagonal de grados ($D_{ii} = \sum_j A_{ij}$)
-- $D^{-1/2}$ tiene $1/\sqrt{deg(i)}$ en la diagonal
+Where:
+- $A$ is the adjacency matrix
+- $D$ is the diagonal degree matrix ($D_{ii} = \sum_j A_{ij}$)
+- $D^{-1/2}$ has $1/\sqrt{deg(i)}$ on the diagonal
 
-**Interpretación Intuitiva:**
-- El mensaje que el nodo $j$ envía al nodo $i$ se divide por $\sqrt{deg(i) \cdot deg(j)}$
-- Esto **equilibra la contribución** de cada vecino según el tamaño de sus vecindarios
-- Evita que nodos con muchos vecinos (microempresas en sectores saturados) dominen la señal
+**Intuitive Interpretation:**
+- The message node $j$ sends to node $i$ is divided by $\sqrt{deg(i) \cdot deg(j)}$
+- This **balances the contribution** of each neighbor according to the size of their neighborhoods
+- Prevents nodes with many neighbors (micro-enterprises in saturated sectors) from dominating the signal
 
-### 5.3. Beneficios para el Modelo de Supervivencia
+### 5.3. Benefits for the Survival Model
 
-1. **Estabilidad Numérica:** Las features mantienen escala estable capa a capa, permitiendo apilar más capas sin explosión/dilución de gradientes.
+1. **Numerical Stability:** Features maintain a stable scale layer by layer, allowing for stacking more layers without gradient explosion/dilution.
 
-2. **Representaciones Equilibradas:** Empresas pequeñas y medianas reciben representaciones igualmente ponderadas, evitando el sesgo hacia microempresas.
+2. **Balanced Representations:** Small and medium enterprises receive equally weighted representations, avoiding bias towards micro-enterprises.
 
-3. **Mejor Generalización:** En el paper original de Kipf & Welling, la normalización simétrica reporta mejores resultados en benchmarks de clasificación de nodos vs. sin normalizar o con mean-pooling ingenuo.
+3. **Better Generalization:** In the original Kipf & Welling paper, symmetric normalization reports better results in node classification benchmarks vs. unnormalized or naive mean-pooling.
 
-### 5.4. Implementación en PyTorch Geometric
+### 5.4. Implementation in PyTorch Geometric
 
-PyG aplica automáticamente esta normalización en `GCNConv`:
+PyG automatically applies this normalization in `GCNConv`:
 
 ```python
 from torch_geometric.nn import GCNConv
 
-# GCNConv ya incluye normalización simétrica por defecto
+# GCNConv already includes symmetric normalization by default
 conv = GCNConv(in_channels, out_channels)
 
-# Para control manual, usar el parámetro normalize:
+# For manual control, use the normalize parameter:
 conv = GCNConv(in_channels, out_channels, normalize=True)  # Default
 ```
 
-### 5.5. Consideraciones Adicionales para Desbalance de Clases
+### 5.5. Additional Considerations for Class Imbalance
 
-Además de la normalización de vecindarios, se recomienda aplicar **ponderación de clases** en la función de pérdida para el desbalance en la variable de supervivencia:
+In addition to neighborhood normalization, applying **class weighting** in the loss function is recommended for the survival variable imbalance:
 
 ```python
-# Calcular pesos inversamente proporcionales a frecuencia de clase
+# Calculate weights inversely proportional to class frequency
 class_counts = torch.bincount(labels)
 class_weights = 1.0 / class_counts.float()
-class_weights = class_weights / class_weights.sum()  # Normalizar
+class_weights = class_weights / class_weights.sum()  # Normalize
 
-# Aplicar en Cross Entropy
+# Apply in Cross Entropy
 loss = F.cross_entropy(predictions, labels, weight=class_weights)
 ```
 
-| Técnica | Problema que Resuelve |
-|---------|----------------------|
-| **Normalización Kipf & Welling** | Desbalance en *estructura del grafo* (nodos con muchos vecinos) |
-| **Ponderación de Clases** | Desbalance en *etiquetas* (más empresas que sobreviven vs. no sobreviven) |
-| **Stratified Sampling** | Desbalance en *batches* durante mini-batch training |
+| Technique | Problem Solved |
+|-----------|----------------|
+| **Kipf & Welling Normalization** | Imbalance in *graph structure* (nodes with many neighbors) |
+| **Class Weighting** | Imbalance in *labels* (more surviving firms vs. non-surviving) |
+| **Stratified Sampling** | Imbalance in *batches* during mini-batch training |

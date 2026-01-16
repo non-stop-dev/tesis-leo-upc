@@ -1,72 +1,27 @@
-# Documentation Resources
+# References
 
-This folder contains references to PyG documentation files that complement this skill.
+## Academic Papers
 
-## Primary References
+### Heterogeneous Graph Attention Network (HAN)
+**Citation**: Wang, X., Ji, H., Shi, C., Wang, B., Ye, Y., Cui, P., & Yu, P. S. (2019). Heterogeneous graph attention network. *WWW*.
 
-- **04b_heterogeneous_graph_learning.md** - Complete tutorial on heterogeneous graphs
-- **17_torch_geometric_nn.md** - HeteroConv and related layers
-- **28_torch_geometric_contrib.md** - Additional heterogeneous layers
+**Key Contributions**:
+- **Meta-path Attention**: Aggregates information along semantic paths (e.g., Paper-Author-Paper).
+- **Semantic Attention**: Learns the importance of different meta-paths.
 
-## Key Concepts from Documentation
+### MAGNN: Metapath Aggregated Graph Neural Network
+**Citation**: Fu, X., Zhang, J., Meng, Z., & King, I. (2020). Magnn: Metapath aggregated graph neural network for heterogeneous graph embedding. *WWW*.
 
-### HeteroData Structure
+**Key Contributions**:
+- Considers intermediate nodes in meta-paths, not just end-points.
+- Reduces information loss compared to HAN.
 
-```python
-from torch_geometric.data import HeteroData
+### Graph Transformer Networks (GTN)
+**Citation**: Yun, S., Jeong, M., Kim, R., Kang, J., & Kim, H. J. (2019). Graph transformer networks. *NeurIPS*.
 
-data = HeteroData()
+**Key Contributions**:
+- Learns new graph structures (soft selection of meta-paths) via transformer mechanisms.
+- Useful when useful meta-paths are unknown.
 
-# Node features by type
-data['paper'].x = paper_features
-data['author'].x = author_features
-
-# Edges by relation (source_type, relation, target_type)
-data['author', 'writes', 'paper'].edge_index = ...
-data['paper', 'cites', 'paper'].edge_index = ...
-```
-
-### Converting Homogeneous to Heterogeneous
-
-From `04b_heterogeneous_graph_learning.md`:
-
-```python
-from torch_geometric.nn import to_hetero
-
-# Define model for homogeneous graph
-model = HomogeneousGNN(hidden_channels=64)
-
-# Convert to heterogeneous
-model = to_hetero(model, data.metadata(), aggr='sum')
-
-# Forward pass with dict inputs
-out = model(data.x_dict, data.edge_index_dict)
-```
-
-### Metadata
-
-`data.metadata()` returns a tuple:
-1. `node_types`: List of node type strings
-2. `edge_types`: List of (src, rel, dst) tuples
-
-### HeteroConv for Manual Control
-
-```python
-from torch_geometric.nn import HeteroConv, GCNConv, SAGEConv
-
-conv = HeteroConv({
-    ('user', 'rates', 'movie'): SAGEConv(-1, 64),
-    ('movie', 'rev_rates', 'user'): SAGEConv(-1, 64),
-}, aggr='sum')
-```
-
-### Adding Reverse Edges
-
-Essential for bidirectional message passing:
-
-```python
-import torch_geometric.transforms as T
-
-data = T.ToUndirected()(data)
-# Creates reverse edges like ('movie', 'rev_rates', 'user')
-```
+## Documentation
+- [PyTorch Geometric Heterogeneous Graph Learning](https://pytorch-geometric.readthedocs.io/en/latest/tutorial/heterogeneous.html)

@@ -14,6 +14,30 @@ Fast lookups for common GNN patterns, hyperparameters, and PyG utilities.
 - Finding common transforms
 - Remembering typical hyperparameter ranges
 
+## Theoretical Fundamentals
+
+> **See**: `resources/REFERENCES.md` for detailed academic background
+
+### Graph Types
+- **Undirected**: Edges have no direction (e.g., chemical bonds). Adjacency matrix is symmetric.
+- **Directed**: Information flows $u \to v$ (e.g., citation networks, supply chains).
+- **Heterogeneous**: Multiple types of nodes and edges (e.g., MSME $\leftrightarrow$ District). Requires `HeteroData`.
+- **Multipartite**: Edges only between disjoint sets of nodes (e.g., User-Item).
+
+### GNN Tasks
+1.  **Node Classification**: Predict label $y_v$ for node $v$ (e.g., Survival Yes/No).
+2.  **Link Prediction**: Predict existence or type of edge $(u, v)$ (e.g., "Competes with").
+3.  **Graph Classification**: Predict label for entire graph $G$ (e.g., Molecule toxicity).
+
+### Pooling Operations (Readout)
+Aggregating node embeddings $\mathbf{H}$ into a graph representation $\mathbf{h}_G$.
+- **Global Mean/Max/Add**: $\mathbf{h}_G = \text{pool}(\{\mathbf{h}_v | v \in G\})$.
+- **Hierarchical Pooling**: Coarsening the graph in steps (e.g., DiffPool, SAGPool).
+- **Attention Pooling**: GlobalAttention($\mathbf{h}_v$) - learns which nodes matter most.
+
+### Equivariance
+GNNs must be **permutation invariant**: changing the order of input nodes (rows in $\mathbf{X}$) must not change the graph-level output, and must simply permute the node-level output.
+
 ## GNN Layer Comparison
 
 | Layer | Aggregation | Edge Features | Attention | Best For |
