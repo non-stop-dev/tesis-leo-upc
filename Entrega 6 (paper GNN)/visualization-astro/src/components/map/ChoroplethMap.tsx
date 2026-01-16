@@ -213,7 +213,7 @@ export default function ChoroplethMap({
 
             {/* Loading Overlay - z-[5] keeps it behind controls (z-10) but covers map */}
             {isLoading && (
-                <div className="absolute inset-0 z-[5] bg-white/60 backdrop-blur-sm flex items-end justify-center pb-20 transition-opacity duration-200">
+                <div className="absolute inset-0 z-5 bg-white/60 backdrop-blur-sm flex items-end justify-center pb-20 transition-opacity duration-200">
                     <div className="flex items-center gap-3 bg-white/95 px-5 py-3 rounded-full shadow-xl border border-slate-200">
                         <div className="w-5 h-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
                         <p className="text-sm font-medium text-slate-600">Cargando {currentConfig.titleSuffix}...</p>
