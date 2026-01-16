@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+import ChoroplethMap from "../components/map/ChoroplethMap";
+
+const title = "Densidad de MIPYMES por Distrito - Perú 2021";
+
+// Color scale: Yellow (low) to Dark Blue (high)
+const colorStops: [number, string][] = [
+  [0, "#ffffcc"],
+  [50, "#a1dab4"],
+  [200, "#41b6c4"],
+  [500, "#2c7fb8"],
+  [1000, "#253494"],
+];
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Visualización de la densidad de MIPYMES peruanas por distrito basado en el V Censo Económico 2022"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-slate-100">
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <h1 class="text-xl font-bold text-slate-800">{title}</h1>
+        <p class="text-sm text-slate-500 mt-1">
+          Fuente: V Censo Nacional Económico 2022 (INEI)
+        </p>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6">
+      <div
+        class="bg-white rounded-xl shadow-lg overflow-hidden"
+        style="height: calc(100vh - 180px);"
+      >
+        <ChoroplethMap
+          client:only="react"
+          title="Densidad de MIPYMES"
+          legendTitle="Número de Empresas"
+          className="h-full"
+        />
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
+          <h3 class="text-sm font-medium text-slate-500">Total MIPYMES</h3>
+          <p class="text-2xl font-bold text-slate-800">1,377,931</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="text-sm font-medium text-slate-500">Distritos</h3>
+          <p class="text-2xl font-bold text-slate-800">1,887</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="text-sm font-medium text-slate-500">Provincias</h3>
+          <p class="text-2xl font-bold text-slate-800">196</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
