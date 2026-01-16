@@ -1,157 +1,135 @@
 #!/usr/bin/env python3
-"""
-Fetch Peru administrative boundaries from Overpass API.
-
-This script downloads department, province, and district boundaries
-and saves them as GeoJSON files.
-
-Output:
-    - public/map-geojson/peru_departments.geojson
-    - public/map-geojson/peru_provinces.geojson  
-    - public/map-geojson/peru_districts.geojson
-"""
-
 import json
 import os
+import time
+import urllib.request
+import urllib.parse
 import sys
-from typing import Any
-import requests
 
-OVERPASS_API_URL = "https://overpass-api.de/api/interpreter"
+# Multiple mirrors for reliability
+MIRRORS = [
+    "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.osm.ch/api/interpreter"
+]
 
-# Peru boundary relation ID
-PERU_RELATION_ID = "288247"
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "visualization-astro", "public", "map-geojson")
+TEMP_DIR = os.path.join(OUTPUT_DIR, "temp")
+FINAL_OUTPUT = os.path.join(OUTPUT_DIR, "peru_districts.geojson")
 
-def build_boundary_query(admin_level: int) -> str:
+os.makedirs(TEMP_DIR, exist_ok=True)
+
+def stitch_ways(ways):
+    if not ways: return []
+    rings = []
+    pending_ways = [list(w) for w in ways if len(w) > 0]
+    while pending_ways:
+        current_ring = pending_ways.pop(0)
+        changed = True
+        while changed:
+            changed = False
+            for i, way in enumerate(pending_ways):
+                if current_ring[-1] == way[0]:
+                    current_ring.extend(way[1:]); pending_ways.pop(i); changed = True; break
+                elif current_ring[-1] == way[-1]:
+                    current_ring.extend(way[:-1][::-1]); pending_ways.pop(i); changed = True; break
+                elif current_ring[0] == way[-1]:
+                    current_ring = way[:-1] + current_ring; pending_ways.pop(i); changed = True; break
+                elif current_ring[0] == way[0]:
+                    current_ring = way[1:][::-1] + current_ring; pending_ways.pop(i); changed = True; break
+            if current_ring[0] == current_ring[-1] and len(current_ring) > 2: break
+        if current_ring[0] != current_ring[-1]: current_ring.append(current_ring[0])
+        rings.append(current_ring)
+    return rings
+
+def query_overpass(query, timeout=900):
+    data = urllib.parse.urlencode({"data": query}).encode("utf-8")
+    for mirror in MIRRORS:
+        print(f"  [Overpass] Trying {mirror}...")
+        for attempt in range(1, 3):
+            try:
+                req = urllib.request.Request(mirror, data=data)
+                with urllib.request.urlopen(req, timeout=timeout) as response:
+                    if response.status == 200:
+                        return json.loads(response.read().decode("utf-8"))
+            except Exception as e:
+                print(f"    [Attempt {attempt}] Error: {e}")
+                time.sleep(5)
+    return None
+
+def fetch_departments():
+    query = """
+    [out:json][timeout:120];
+    rel(288247);
+    rel(r)["admin_level"="4"];
+    out body;
     """
-    Build Overpass QL query for administrative boundaries.
-    
-    Admin levels in Peru:
-    - 4: Departments (Regiones)
-    - 6: Provinces (Provincias)
-    - 8: Districts (Distritos)
-    """
-    return f"""
-        [out:json][timeout:300];
-        area["ISO3166-1"="PE"]->.peru;
-        (
-          relation["admin_level"="{admin_level}"]["boundary"="administrative"](area.peru);
-        );
-        out geom;
-    """
+    print("[Overpass] Fetching departments...")
+    data = query_overpass(query)
+    if data and "elements" in data: return data["elements"]
+    return []
 
+def process_department(dept):
+    tags = dept.get("tags", {})
+    dept_name = tags.get("name", "Unknown")
+    dept_id = dept.get("id")
+    temp_file = os.path.join(TEMP_DIR, f"dept_{dept_id}.json")
+    
+    if os.path.exists(temp_file) and os.path.getsize(temp_file) > 100:
+        print(f"  [{dept_name}] Cached")
+        with open(temp_file, "r") as f: return json.load(f)
 
-def parse_relation_to_feature(element: dict[str, Any]) -> dict[str, Any] | None:
-    """Convert Overpass relation element to GeoJSON Feature."""
-    if element.get("type") != "relation":
-        return None
+    timeout = 1800 if "Loreto" in dept_name else 900
+    area_id = 3600000000 + dept_id
+    query = f'[out:json][timeout:{timeout}]; area({area_id})->.a; rel(area.a)["admin_level"="8"]; out body geom;'
     
-    tags = element.get("tags", {})
-    members = element.get("members", [])
-    
-    # Extract outer ways to build polygon
-    outer_coords: list[list[list[float]]] = []
-    
-    for member in members:
-        if member.get("role") == "outer" and member.get("type") == "way":
-            geometry = member.get("geometry", [])
-            if geometry:
-                coords = [[pt["lon"], pt["lat"]] for pt in geometry]
-                outer_coords.append(coords)
-    
-    if not outer_coords:
-        return None
-    
-    # Build geometry
-    if len(outer_coords) == 1:
-        geometry = {
-            "type": "Polygon",
-            "coordinates": outer_coords
-        }
-    else:
-        geometry = {
-            "type": "MultiPolygon",
-            "coordinates": [[ring] for ring in outer_coords]
-        }
-    
-    # Extract UBIGEO from tags (if available)
-    ubigeo = tags.get("ref:INEI", tags.get("ref", ""))
-    
-    properties = {
-        "osm_id": element.get("id"),
-        "name": tags.get("name", ""),
-        "name_es": tags.get("name:es", tags.get("name", "")),
-        "ubigeo": ubigeo,
-        "admin_level": tags.get("admin_level", ""),
-        "wikipedia": tags.get("wikipedia", ""),
-    }
-    
-    return {
-        "type": "Feature",
-        "properties": properties,
-        "geometry": geometry
-    }
+    print(f"  [{dept_name}] Fetching districts...")
+    data = query_overpass(query, timeout + 60)
+    if not data or "elements" not in data: return []
 
-
-def fetch_boundaries(admin_level: int, name: str) -> dict[str, Any]:
-    """Fetch boundaries from Overpass API."""
-    print(f"[Overpass] Fetching {name} (admin_level={admin_level})...")
-    
-    query = build_boundary_query(admin_level)
-    
-    response = requests.post(
-        OVERPASS_API_URL,
-        data={"data": query},
-        headers={"Content-Type": "application/x-www-form-urlencoded"},
-        timeout=600
-    )
-    
-    if not response.ok:
-        print(f"[Error] Overpass API returned {response.status_code}")
-        sys.exit(1)
-    
-    data = response.json()
-    elements = data.get("elements", [])
-    print(f"[Overpass] Received {len(elements)} elements")
-    
     features = []
-    for element in elements:
-        feature = parse_relation_to_feature(element)
-        if feature:
-            features.append(feature)
+    for el in data.get("elements", []):
+        if el["type"] != "relation": continue
+        tags = el.get("tags", {})
+        outer_ways = [ [(n["lon"], n["lat"]) for n in m["geometry"]] for m in el.get("members", []) if m["type"] == "way" and m.get("role") != "inner" and "geometry" in m]
+        inner_ways = [ [(n["lon"], n["lat"]) for n in m["geometry"]] for m in el.get("members", []) if m["type"] == "way" and m.get("role") == "inner" and "geometry" in m]
+        
+        outer_rings = stitch_ways(outer_ways)
+        if not outer_rings: continue
+        parts = [[r] for r in outer_rings]
+        if inner_ways:
+            inner_rings = stitch_ways(inner_ways)
+            if inner_rings: parts[0].extend(inner_rings)
+        
+        geom = {"type": "Polygon", "coordinates": parts[0]} if len(parts) == 1 else {"type": "MultiPolygon", "coordinates": parts}
+        features.append({
+            "type": "Feature",
+            "id": el["id"],
+            "properties": {
+                "osm_id": el["id"],
+                "name": tags.get("name:es", tags.get("name", "")),
+                "department": dept_name,
+                "msme_count": 0
+            },
+            "geometry": geom
+        })
     
-    print(f"[GeoJSON] Created {len(features)} features")
-    
-    return {
-        "type": "FeatureCollection",
-        "features": features
-    }
-
+    with open(temp_file, "w") as f: json.dump(features, f)
+    print(f"  [{dept_name}] Saved {len(features)} districts")
+    return features
 
 def main():
-    # Output directory
-    output_dir = os.path.join(
-        os.path.dirname(__file__),
-        "visualization", "public", "map-geojson"
-    )
-    os.makedirs(output_dir, exist_ok=True)
+    depts = fetch_departments()
+    if not depts: sys.exit(1)
     
-    boundaries = [
-        (4, "departments", "peru_departments.geojson"),
-        (6, "provinces", "peru_provinces.geojson"),
-        (8, "districts", "peru_districts.geojson"),
-    ]
-    
-    for admin_level, name, filename in boundaries:
-        geojson = fetch_boundaries(admin_level, name)
-        
-        output_path = os.path.join(output_dir, filename)
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(geojson, f, ensure_ascii=False)
-        
-        print(f"[Saved] {output_path}")
-        print()
+    all_features = []
+    for dept in depts:
+        all_features.extend(process_department(dept))
+        time.sleep(1)
 
+    with open(FINAL_OUTPUT, "w") as f: 
+        json.dump({"type": "FeatureCollection", "features": all_features}, f)
+    print(f"\n[Done] {len(all_features)} districts saved.")
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,134 @@
+{
+    "country": {
+        "name": "Peru",
+        "osm_id": 288247,
+        "admin_level": 2
+    },
+    "departments": [
+        {
+            "name": "Amazonas",
+            "osm_id": 1954493,
+            "admin_level": 4
+        },
+        {
+            "name": "Áncash",
+            "osm_id": 1944657,
+            "admin_level": 4
+        },
+        {
+            "name": "Apurímac",
+            "osm_id": 1930901,
+            "admin_level": 4
+        },
+        {
+            "name": "Arequipa",
+            "osm_id": 1899013,
+            "admin_level": 4
+        },
+        {
+            "name": "Ayacucho",
+            "osm_id": 1933551,
+            "admin_level": 4
+        },
+        {
+            "name": "Cajamarca",
+            "osm_id": 1907899,
+            "admin_level": 4
+        },
+        {
+            "name": "Callao",
+            "osm_id": 1971661,
+            "admin_level": 4
+        },
+        {
+            "name": "Cusco",
+            "osm_id": 1929522,
+            "admin_level": 4
+        },
+        {
+            "name": "Huancavelica",
+            "osm_id": 1944659,
+            "admin_level": 4
+        },
+        {
+            "name": "Huánuco",
+            "osm_id": 1948258,
+            "admin_level": 4
+        },
+        {
+            "name": "Ica",
+            "osm_id": 1891287,
+            "admin_level": 4
+        },
+        {
+            "name": "Junín",
+            "osm_id": 1896111,
+            "admin_level": 4
+        },
+        {
+            "name": "La Libertad",
+            "osm_id": 1948452,
+            "admin_level": 4
+        },
+        {
+            "name": "Lambayeque",
+            "osm_id": 1953170,
+            "admin_level": 4
+        },
+        {
+            "name": "Lima",
+            "osm_id": 1879287,
+            "admin_level": 4
+        },
+        {
+            "name": "Loreto",
+            "osm_id": 1994077,
+            "admin_level": 4
+        },
+        {
+            "name": "Madre de Dios",
+            "osm_id": 1875889,
+            "admin_level": 4
+        },
+        {
+            "name": "Moquegua",
+            "osm_id": 1986151,
+            "admin_level": 4
+        },
+        {
+            "name": "Pasco",
+            "osm_id": 1967959,
+            "admin_level": 4
+        },
+        {
+            "name": "Piura",
+            "osm_id": 1969722,
+            "admin_level": 4
+        },
+        {
+            "name": "Puno",
+            "osm_id": 1973462,
+            "admin_level": 4
+        },
+        {
+            "name": "San Martín",
+            "osm_id": 1986974,
+            "admin_level": 4
+        },
+        {
+            "name": "Tacna",
+            "osm_id": 1874307,
+            "admin_level": 4
+        },
+        {
+            "name": "Tumbes",
+            "osm_id": 1986151,
+            "admin_level": 4
+        },
+        {
+            "name": "Ucayali",
+            "osm_id": 1986151,
+            "admin_level": 4
+        }
+    ]
+}
